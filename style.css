@@ -1,12 +1,12 @@
 :root{
-  --bg:#0b0a09;
-  --bg-2:#141210;
-  --ink:#f4efe2;
-  --ink-soft:#b3aa98;
-  --accent:#e3b23c;
-  --accent-2:#c99a3a;
-  --line:#2a251d;
-  --card:#161310;
+  --bg:#fbfdfc;
+  --bg-2:#eef8f6;
+  --ink:#163330;
+  --ink-soft:#5f7f7a;
+  --accent:#4fb8a8;
+  --accent-2:#2b8f82;
+  --line:#d6ece8;
+  --card:#ffffff;
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -30,7 +30,7 @@ a{color:var(--accent);}
 /* Nav */
 header.site{
   position:sticky; top:0; z-index:20;
-  background:rgba(11,10,9,.86);
+  background:rgba(251,253,252,.88);
   backdrop-filter:blur(6px);
   border-bottom:1px solid var(--line);
 }
@@ -68,9 +68,9 @@ nav a:hover{color:var(--accent);}
 .hero-bg{
   position:absolute; inset:0; z-index:0;
   background:
-    radial-gradient(ellipse 60% 50% at 82% 8%, rgba(227,178,60,.15), transparent 60%),
-    radial-gradient(ellipse 55% 45% at 8% 95%, rgba(201,154,58,.16), transparent 60%),
-    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(227,178,60,.05), transparent 70%);
+    radial-gradient(ellipse 60% 50% at 82% 8%, rgba(79,184,168,.22), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 8% 95%, rgba(43,143,130,.20), transparent 60%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(79,184,168,.08), transparent 70%);
   background-size:180% 180%, 180% 180%, 160% 160%;
   background-repeat:no-repeat;
   animation:drift 26s ease-in-out infinite alternate;
@@ -82,14 +82,14 @@ nav a:hover{color:var(--accent);}
 }
 .hero-bg .orb{
   position:absolute; border-radius:50%; filter:blur(60px);
-  opacity:.35; will-change:transform;
+  opacity:.5; will-change:transform;
 }
-.hero-bg .orb-1{width:260px;height:260px;left:6%;top:18%;background:var(--accent-2);
+.hero-bg .orb-1{width:280px;height:280px;left:6%;top:18%;background:var(--accent-2);
   animation:float-a 17s ease-in-out infinite;}
-.hero-bg .orb-2{width:340px;height:340px;right:4%;top:-6%;background:var(--accent);
-  opacity:.22; animation:float-b 21s ease-in-out infinite;}
-.hero-bg .orb-3{width:200px;height:200px;left:38%;bottom:-8%;background:var(--accent-2);
-  opacity:.25; animation:float-a 19s ease-in-out infinite reverse;}
+.hero-bg .orb-2{width:380px;height:380px;right:4%;top:-6%;background:var(--accent);
+  opacity:.4; animation:float-b 21s ease-in-out infinite;}
+.hero-bg .orb-3{width:220px;height:220px;left:38%;bottom:-8%;background:var(--accent-2);
+  opacity:.42; animation:float-a 19s ease-in-out infinite reverse;}
 @keyframes float-a{
   0%,100%{transform:translate(0,0) scale(1);}
   50%{transform:translate(24px,-18px) scale(1.08);}
@@ -126,7 +126,7 @@ nav a:hover{color:var(--accent);}
   text-decoration:none;border:1px solid var(--ink);
   transition:.2s ease;
 }
-.btn-solid{background:var(--accent);color:#0b0a09;border-color:var(--accent);}
+.btn-solid{background:var(--accent);color:#ffffff;border-color:var(--accent);}
 .btn-solid:hover{background:var(--accent-2);border-color:var(--accent-2);}
 .btn-outline{color:var(--ink);border-color:var(--ink-soft);}
 .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
@@ -183,17 +183,17 @@ blockquote footer{
 
 /* Contact */
 .contact-box{
-  background:linear-gradient(135deg, var(--card), #1d1710);
+  background:linear-gradient(135deg, var(--accent), var(--accent-2));
   border:1px solid var(--line);
-  color:var(--ink); padding:56px 48px;
+  color:#ffffff; padding:56px 48px;
   display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;
 }
-.contact-box h2{color:var(--accent);}
-.contact-box p{color:var(--ink-soft);margin-top:10px;max-width:420px;}
+.contact-box h2{color:#ffffff;}
+.contact-box p{color:rgba(255,255,255,.85);margin-top:10px;max-width:420px;}
 .contact-links{display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
-.contact-links a{color:var(--ink);text-decoration:none;border-bottom:1px solid rgba(244,239,226,.25);padding-bottom:2px;}
-.contact-links a:hover{color:var(--accent);border-color:var(--accent);}
+.contact-links a{color:#ffffff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;}
+.contact-links a:hover{border-color:#ffffff;}
 
 footer.site{padding:32px 0;text-align:center;color:var(--ink-soft);font-size:15px;}
 
-::selection{background:var(--accent);color:var(--bg);}
+::selection{background:var(--accent);color:#ffffff;}
