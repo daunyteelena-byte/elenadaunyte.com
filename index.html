@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elena Daunytė — Violončelininkė</title>
+<meta name="description" content="Elena Daunytė — violončelininkė, tarptautinių konkursų laureatė, ansamblio „Regnum Musicale“ narė.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f3ec;
+    --bg-2:#efe8db;
+    --ink:#241f1a;
+    --ink-soft:#5c5347;
+    --accent:#7a2e2e;
+    --accent-2:#9c6b3f;
+    --line:#d9cfbd;
+    --card:#fffdf9;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'EB Garamond', Georgia, serif;
+    font-size:19px;
+    line-height:1.65;
+  }
+  h1,h2,h3,.brand{
+    font-family:'Playfair Display', Georgia, serif;
+    font-weight:600;
+    letter-spacing:.01em;
+    margin:0;
+  }
+  a{color:var(--accent);}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  /* Nav */
+  header.site{
+    position:sticky; top:0; z-index:20;
+    background:rgba(247,243,236,.9);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;max-width:920px;margin:0 auto;padding:16px 28px;gap:16px;}
+  .brand{font-size:20px;color:var(--ink);white-space:nowrap;}
+  .brand em{color:var(--accent);font-style:italic;}
+  nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
+  nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.02em;white-space:nowrap;}
+  nav a:hover{color:var(--accent);}
+  .nav-toggle{display:none;background:none;border:none;font-size:26px;color:var(--ink);cursor:pointer;}
+
+  @media (max-width:760px){
+    nav{padding:14px 20px;}
+    .brand{font-size:17px;}
+    nav ul{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+    nav ul::-webkit-scrollbar{display:none;}
+    nav a{font-size:14px;padding:0 10px;}
+    nav a:first-child{padding-left:0;}
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    padding:110px 0 90px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at 80% 0%, rgba(122,46,46,.08), transparent 55%),
+      radial-gradient(ellipse at 10% 100%, rgba(156,107,63,.10), transparent 50%);
+  }
+  .hero-inner{max-width:920px;margin:0 auto;padding:0 28px;position:relative;}
+  .kicker{
+    text-transform:uppercase;letter-spacing:.22em;font-size:13px;
+    color:var(--accent-2); font-family:'EB Garamond',serif; font-weight:600;
+    margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(42px,7vw,74px);line-height:1.05;color:var(--ink);}
+  .hero h1 em{font-style:italic;color:var(--accent);}
+  .hero p.lead{
+    margin-top:22px;max-width:560px;font-size:21px;color:var(--ink-soft);
+  }
+  .hero .cta{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:13px 26px;border-radius:2px;
+    font-family:'EB Garamond',serif;font-size:17px;letter-spacing:.02em;
+    text-decoration:none;border:1px solid var(--ink);
+    transition:.2s ease;
+  }
+  .btn-solid{background:var(--ink);color:var(--bg);}
+  .btn-solid:hover{background:var(--accent);border-color:var(--accent);}
+  .btn-outline{color:var(--ink);border-color:var(--ink-soft);}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+
+  .cello-mark{position:absolute;right:-40px;top:20px;width:260px;opacity:.5;}
+  @media (max-width:760px){.cello-mark{display:none;}}
+
+  /* Sections */
+  section{padding:78px 0;border-top:1px solid var(--line);}
+  .section-head{margin-bottom:44px;}
+  .section-head .kicker{margin-bottom:10px;}
+  .section-head h2{font-size:clamp(28px,4vw,38px);}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:56px;align-items:start;}
+  @media (max-width:760px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid p + p{margin-top:18px;}
+  blockquote{
+    margin:0; padding:26px 0 26px 26px; border-left:3px solid var(--accent);
+    font-style:italic; color:var(--ink); font-size:21px; background:var(--card);
+  }
+  blockquote footer{
+    margin-top:12px;font-style:normal;font-size:15px;color:var(--ink-soft);
+    letter-spacing:.03em;
+  }
+
+  /* Timeline / education */
+  .timeline{list-style:none;margin:0;padding:0;}
+  .timeline li{
+    position:relative;padding:0 0 30px 32px;border-left:1px solid var(--line);
+  }
+  .timeline li:last-child{border-left:1px solid transparent;padding-bottom:0;}
+  .timeline li::before{
+    content:'';position:absolute;left:-5px;top:6px;width:9px;height:9px;
+    border-radius:50%;background:var(--accent);
+  }
+  .timeline h3{font-size:20px;margin-bottom:4px;}
+  .timeline .meta{color:var(--accent-2);font-size:15px;letter-spacing:.02em;margin-bottom:6px;}
+  .timeline p{margin:0;color:var(--ink-soft);}
+
+  /* Ensembles cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:760px){.cards{grid-template-columns:1fr;}}
+  .card{
+    background:var(--card);border:1px solid var(--line);padding:28px 24px;
+  }
+  .card h3{font-size:21px;margin-bottom:10px;}
+  .card p{color:var(--ink-soft);margin:0;font-size:17px;}
+
+  /* Awards */
+  .awards p{color:var(--ink-soft);}
+  .awards ul{padding-left:20px;margin:18px 0 0;color:var(--ink-soft);}
+  .awards li{margin-bottom:8px;}
+
+  /* Contact */
+  .contact-box{
+    background:var(--ink); color:var(--bg); padding:56px 48px;
+    display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;
+  }
+  .contact-box h2{color:var(--bg);}
+  .contact-box p{color:#cfc6b6;margin-top:10px;max-width:420px;}
+  .contact-links{display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
+  .contact-links a{color:var(--bg);text-decoration:none;border-bottom:1px solid rgba(247,243,236,.4);padding-bottom:2px;}
+  .contact-links a:hover{border-color:var(--bg);}
+
+  footer.site{padding:32px 0;text-align:center;color:var(--ink-soft);font-size:15px;}
+
+  ::selection{background:var(--accent);color:var(--bg);}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <a href="#top" class="brand">Elena <em>Daunytė</em></a>
+    <ul>
+      <li><a href="#about">Apie</a></li>
+      <li><a href="#education">Studijos</a></li>
+      <li><a href="#ensembles">Ansambliai</a></li>
+      <li><a href="#awards">Apdovanojimai</a></li>
+      <li><a href="#contact">Kontaktai</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="border-top:none;padding-top:110px;">
+    <div class="hero-inner">
+      <div class="kicker">Violončelė · Balsas · Poezija</div>
+      <h1>Elena Daunytė<br><em>violončelininkė</em></h1>
+      <p class="lead">
+        Lietuvos violončelininkė, garsinanti šalies vardą Europoje ir toliau — tarptautinių konkursų
+        laureatė, ansamblio „Regnum Musicale“ narė ir muzikė, kurioje klasika susitinka su improvizacija.
+      </p>
+      <div class="cta">
+        <a href="#about" class="btn btn-solid">Sužinoti daugiau</a>
+        <a href="#contact" class="btn btn-outline">Susisiekti</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="section-head">
+          <div class="kicker">Apie</div>
+          <h2>Muzika kaip kelionė, ne tikslas</h2>
+        </div>
+        <p>
+          Elena Daunytė — jauna Lietuvos violončelininkė, aktyviai koncertuojanti kaip solistė ir
+          kamerinės muzikos atlikėja. Ji baigė M. K. Čiurlionio menų mokyklą, studijas tęsė
+          Royal Northern College of Music Mančesteryje, o šiuo metu yra Lietuvos muzikos ir teatro
+          akademijos magistrantė prof. Rimanto Armono klasėje.
+        </p>
+        <p>
+          Savo meistriškumą ji šlifavo pas tokius pedagogus kaip Giovanni Sollima, David Geringas,
+          Frans Helmerson ir Troels Svane. Nuo 2016 metų Elena taip pat studijuoja dainavimą pas
+          prof. V. Prudnikovą ir ne kartą yra pasirodžiusi scenoje kaip vokalistė.
+        </p>
+        <p>
+          Be scenos, Elena rašo poeziją muzikos temomis, improvizuoja, kuria ir bėga maratonus —
+          jai svarbiau pats augimo ir tobulėjimo kelias, nei abstraktus tobulumas.
+        </p>
+      </div>
+      <blockquote>
+        „Svarbiausia — augimas ir maksimalus džiaugsmas iš paties tobulėjimo proceso.“
+        <footer>Elena Daunytė</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Kelias</div>
+        <h2>Studijos ir tobulėjimas</h2>
+      </div>
+      <ul class="timeline">
+        <li>
+          <h3>Lietuvos muzikos ir teatro akademija</h3>
+          <div class="meta">Magistrantūra · prof. Rimanto Armono klasė</div>
+          <p>Tęsia aukščiausio lygio violončelės studijas Vilniuje, aktyviai atstovaudama akademijai
+             nacionaliniuose ir tarptautiniuose renginiuose.</p>
+        </li>
+        <li>
+          <h3>Royal Northern College of Music</h3>
+          <div class="meta">Mančesteris, Jungtinė Karalystė</div>
+          <p>Studijos vienoje pripažintiausių Europos muzikos akademijų.</p>
+        </li>
+        <li>
+          <h3>M. K. Čiurlionio menų mokykla</h3>
+          <div class="meta">Vilnius</div>
+          <p>Muzikinio ugdymo pradžia — pamatas, ant kurio užaugo tarptautinė karjera.</p>
+        </li>
+        <li>
+          <h3>Meistriškumo kursai</h3>
+          <div class="meta">Giovanni Sollima · David Geringas · Frans Helmerson · Troels Svane</div>
+          <p>Nuolatinis tobulėjimas šalia pasaulinio garso violončelininkų.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ensembles">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Kartu su kitais</div>
+        <h2>Ansambliai ir bendradarbystė</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Regnum Musicale</h3>
+          <p>Šeimos ansamblis, sukurtas kartu su seserimis ir pavadintas tėvo įkurtos kultūrinės
+             organizacijos vardu — bendra emocija ir jausmo skrydis scenoje.</p>
+        </div>
+        <div class="card">
+          <h3>Synaesthesis</h3>
+          <p>Šiuolaikinės muzikos ansamblis, kuriame Elena groja violončele, atrasdama naujausią
+             kompozitorių kalbą.</p>
+        </div>
+        <div class="card">
+          <h3>Čiurlionio kvartetas</h3>
+          <p>Kamerinės muzikos bendrystė, jungianti klasikinį repertuarą su gilia tarpusavio
+             muzikine chemija.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards" class="awards">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Pripažinimas</div>
+        <h2>Apdovanojimai ir padėkos</h2>
+      </div>
+      <p>Elena yra daugelio tarptautinių konkursų laureatė, o už aktyvią koncertinę ir konkursinę
+         veiklą, garsinančią Lietuvos vardą užsienyje, yra gavusi asmenines Lietuvos Respublikos
+         prezidentų padėkas.</p>
+      <ul>
+        <li>Prezidento Valdo Adamkaus padėka už Lietuvos vardo garsinimą pasaulyje</li>
+        <li>Prezidentės Dalios Grybauskaitės padėka už aktyvią meninę veiklą</li>
+        <li>Daugelio tarptautinių violončelės konkursų laureatė</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" style="border-top:none;padding-bottom:100px;">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <h2>Susisiekime</h2>
+          <p>Koncertai, bendri projektai ar žiniasklaidos užklausos — visada laukiu žinutės.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:kontaktai@elenadaunyte.com">kontaktai@elenadaunyte.com</a>
+          <a href="#top">↑ Į viršų</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">&copy; <span id="year"></span> Elena Daunytė. Visos teisės saugomos.</div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
