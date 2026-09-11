@@ -84,6 +84,17 @@ nav a:hover{color:var(--accent);}
   background-repeat:no-repeat;
   animation:drift 26s ease-in-out infinite alternate;
 }
+.hero-bg::after{
+  content:'';
+  position:absolute; inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' seed='7' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.85  0 0 0 0 0.65  0 0 0 0 0.22  0 0 0 20 -12'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  opacity:.55;
+  animation:twinkle 5s ease-in-out infinite alternate;
+}
+@keyframes twinkle{
+  0%{opacity:.35;}
+  100%{opacity:.6;}
+}
 @keyframes drift{
   0%  {background-position:80% 0%, 10% 100%, 40% 40%;}
   50% {background-position:65% 20%, 25% 80%, 60% 55%;}
@@ -115,7 +126,7 @@ nav a:hover{color:var(--accent);}
 .hero-wave path:nth-child(2){stroke:var(--accent); opacity:.35; animation-duration:19s; animation-direction:reverse;}
 @keyframes wave-shift{to{stroke-dashoffset:-320;}}
 @media (prefers-reduced-motion:reduce){
-  .hero-bg, .hero-bg .orb, .hero-wave path{animation:none !important;}
+  .hero-bg, .hero-bg .orb, .hero-bg::after, .hero-wave path, .hero h1{animation:none !important;}
 }
 .hero-inner{max-width:920px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
 .kicker{
@@ -123,8 +134,19 @@ nav a:hover{color:var(--accent);}
   color:var(--accent-2); font-family:'EB Garamond',serif; font-weight:600;
   margin-bottom:18px;
 }
-.hero h1{font-size:clamp(42px,7vw,74px);line-height:1.05;color:var(--ink);}
-.hero h1 em{font-style:italic;color:var(--accent);}
+.hero h1{
+  font-size:clamp(42px,7vw,74px);line-height:1.05;
+  background:linear-gradient(100deg,
+    var(--ink) 35%, #f2d488 46%, #fff4d6 50%, #f2d488 54%, var(--ink) 65%);
+  background-size:260% 100%;
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  animation:shimmer 7s ease-in-out infinite;
+}
+@keyframes shimmer{
+  0%{background-position:200% 0;}
+  100%{background-position:-100% 0;}
+}
+.hero h1 em{font-style:italic;color:var(--accent);-webkit-text-fill-color:var(--accent);}
 .hero p.lead{
   margin-top:22px;max-width:560px;font-size:21px;color:var(--ink-soft);
 }
