@@ -228,7 +228,8 @@ section{padding:78px 0;border-top:1px solid var(--line);}
   padding:5px 9px 0 0;
   color:var(--accent);
 }
-/* Video */
+/* Solo videos */
+.video-list{display:flex;flex-direction:column;gap:52px;}
 .video-wrap{
   position:relative; padding-top:56.25%; height:0; overflow:hidden;
   border-radius:4px; background:var(--card);
