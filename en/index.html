@@ -74,6 +74,11 @@
           <div class="hero-photo-frame">
             <img src="../img/elena-hero.jpg" srcset="../img/elena-hero.jpg 666w, ../img/elena-hero@2x.jpg 1332w" sizes="(max-width:760px) 60vw, 280px" width="666" height="1000" alt="Elena Daunytė with her cello" loading="eager">
           </div>
+          <button class="audio-btn" type="button" data-audio="../audio/intro.mp3" data-dur="1 min · LT">
+            <span class="audio-icon" aria-hidden="true"></span>
+            <span class="audio-label">Listen to the intro</span>
+            <span class="audio-dur">1 min · LT</span>
+          </button>
         </div>
       </div>
     </div>
@@ -247,6 +252,19 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.querySelectorAll('.audio-btn').forEach(function(btn){
+    var audio = new Audio(btn.dataset.audio);
+    var out = btn.querySelector('.audio-dur');
+    var fmt = function(s){ return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'); };
+    btn.addEventListener('click', function(){ audio.paused ? audio.play() : audio.pause(); });
+    audio.addEventListener('play', function(){ btn.classList.add('is-playing'); });
+    audio.addEventListener('pause', function(){ btn.classList.remove('is-playing'); });
+    audio.addEventListener('ended', function(){ out.textContent = btn.dataset.dur; });
+    audio.addEventListener('timeupdate', function(){
+      if (audio.duration) out.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+    });
+  });
 </script>
 </body>
 </html>
