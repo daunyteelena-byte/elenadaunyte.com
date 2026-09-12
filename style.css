@@ -145,6 +145,19 @@ nav a:hover{color:var(--accent);}
   .hero-bg, .hero-bg .orb, .hero-bg::after, .hero-wave path, .hero h1{animation:none !important;}
 }
 .hero-inner{max-width:920px;margin:0 auto;padding:0 28px;position:relative;z-index:1;}
+.hero-flex{display:flex;align-items:center;justify-content:space-between;gap:52px;}
+.hero-text{flex:1 1 520px;min-width:0;}
+.hero-photo{flex:0 0 280px;display:flex;justify-content:center;}
+.hero-photo img{
+  width:100%;max-width:280px;height:auto;display:block;
+  border-radius:3px;
+  box-shadow:0 24px 60px -18px rgba(22,51,48,.4), 0 0 0 1px rgba(255,255,255,.7);
+}
+@media (max-width:760px){
+  .hero-flex{flex-direction:column-reverse;gap:36px;}
+  .hero-photo{flex:0 0 auto;width:62%;max-width:230px;}
+  .hero-photo img{max-width:100%;}
+}
 .kicker{
   text-transform:uppercase;letter-spacing:.22em;font-size:13px;
   color:var(--accent-2); font-family:'EB Garamond',serif; font-weight:600;
