@@ -157,8 +157,9 @@ nav a:hover{color:var(--accent);}
   content:'';
   position:absolute; inset:0;
   border-radius:3px;
-  background:radial-gradient(ellipse at 50% 22%, #fff6e0, #ffe9c2 75%);
+  background:radial-gradient(ellipse at 50% 22%, #fffcf3, #fff2da 75%);
   mix-blend-mode:multiply;
+  opacity:.7;
   pointer-events:none;
 }
 @media (max-width:760px){
