@@ -189,6 +189,40 @@ nav a:hover{color:var(--accent);}
   margin-top:22px;max-width:560px;font-size:21px;color:var(--ink-soft);
 }
 .hero .cta{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;}
+
+/* Audio intro */
+.audio-intro{margin-top:26px;}
+.audio-btn{
+  display:inline-flex; align-items:center; gap:13px;
+  background:none; border:0; padding:6px 0; cursor:pointer;
+  font-family:'EB Garamond', Georgia, serif; font-size:17px;
+  letter-spacing:.02em; color:var(--ink-soft); transition:.2s ease;
+}
+.audio-btn:hover{color:var(--accent);}
+.audio-icon{
+  width:36px; height:36px; border-radius:50%; flex-shrink:0;
+  border:1px solid var(--accent);
+  display:inline-flex; align-items:center; justify-content:center;
+  transition:.2s ease;
+}
+.audio-btn:hover .audio-icon{background:var(--accent);}
+.audio-icon::before{
+  content:'';
+  border-left:9px solid var(--accent);
+  border-top:6px solid transparent;
+  border-bottom:6px solid transparent;
+  margin-left:3px;
+  transition:.2s ease;
+}
+.audio-btn:hover .audio-icon::before{border-left-color:#fff;}
+.audio-btn.is-playing .audio-icon::before{
+  border:0; width:3px; height:13px; margin-left:-4px;
+  background:var(--accent); box-shadow:7px 0 0 var(--accent);
+}
+.audio-btn.is-playing:hover .audio-icon::before{
+  background:#fff; box-shadow:7px 0 0 #fff;
+}
+.audio-dur{font-size:14px; letter-spacing:.06em; color:var(--accent-2); font-variant-numeric:tabular-nums;}
 .btn{
   display:inline-block;padding:13px 26px;border-radius:2px;
   font-family:'EB Garamond',serif;font-size:17px;letter-spacing:.02em;

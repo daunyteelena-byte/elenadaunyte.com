@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=21">
+<link rel="stylesheet" href="style.css?v=22">
 </head>
 <body>
 
@@ -68,6 +68,13 @@
           <div class="cta">
             <a href="#about" class="btn btn-solid">Sužinoti daugiau</a>
             <a href="#contact" class="btn btn-outline">Susisiekti</a>
+          </div>
+          <div class="audio-intro">
+            <button class="audio-btn" type="button" data-audio="audio/intro.mp3" data-dur="1 min">
+              <span class="audio-icon" aria-hidden="true"></span>
+              <span class="audio-label">Klausyti įžangos</span>
+              <span class="audio-dur">1 min</span>
+            </button>
           </div>
         </div>
         <div class="hero-photo">
@@ -244,6 +251,19 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.querySelectorAll('.audio-btn').forEach(function(btn){
+    var audio = new Audio(btn.dataset.audio);
+    var out = btn.querySelector('.audio-dur');
+    var fmt = function(s){ return Math.floor(s/60) + ':' + String(Math.floor(s%60)).padStart(2,'0'); };
+    btn.addEventListener('click', function(){ audio.paused ? audio.play() : audio.pause(); });
+    audio.addEventListener('play', function(){ btn.classList.add('is-playing'); });
+    audio.addEventListener('pause', function(){ btn.classList.remove('is-playing'); });
+    audio.addEventListener('ended', function(){ out.textContent = btn.dataset.dur; });
+    audio.addEventListener('timeupdate', function(){
+      if (audio.duration) out.textContent = fmt(audio.currentTime) + ' / ' + fmt(audio.duration);
+    });
+  });
 </script>
 </body>
 </html>
