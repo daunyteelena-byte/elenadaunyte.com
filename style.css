@@ -151,6 +151,7 @@ nav a:hover{color:var(--accent);}
 .hero-photo .kicker{
   margin:0; font-size:12px; letter-spacing:.18em; text-align:center;
 }
+.kicker-mobile{display:none;}
 .hero-photo-frame{position:relative;width:100%;max-width:280px;}
 .hero-photo-frame img{
   width:100%;height:auto;display:block;
@@ -170,6 +171,8 @@ nav a:hover{color:var(--accent);}
   .hero-flex{flex-direction:column-reverse;gap:36px;}
   .hero-photo{flex:0 0 auto;width:100%;}
   .hero-photo-frame{width:62%;max-width:230px;}
+  .kicker-desktop{display:none;}
+  .kicker-mobile{display:block;}
 }
 .kicker{
   text-transform:uppercase;letter-spacing:.22em;font-size:13px;
