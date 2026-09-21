@@ -62,11 +62,22 @@ header.site{
 nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;max-width:920px;margin:0 auto;padding:16px 28px;gap:10px 16px;}
 .brand{font-size:20px;color:var(--ink);white-space:nowrap;}
 .brand em{color:var(--accent);font-style:italic;}
-.nav-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+.nav-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
 nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
 nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.02em;white-space:nowrap;}
+
+/* Eight menu items plus six language codes will not fit one line beside the
+   name, so above mobile the header is two deliberate rows: name and languages
+   on top, the menu across the full width below. */
+@media (min-width:761px){
+  .nav-right{display:contents;}
+  nav{flex-wrap:wrap; justify-content:space-between; gap:6px 16px;}
+  .brand{order:1;}
+  .lang-switch{order:2;}
+  nav ul{order:3; flex-basis:100%; margin-top:2px;}
+}
 nav a:hover{color:var(--accent);}
-.lang-switch{display:flex;gap:9px;font-size:13px;letter-spacing:.03em;text-transform:uppercase;}
+.lang-switch{display:flex;gap:8px;font-size:13px;letter-spacing:.03em;text-transform:uppercase;}
 .lang-switch a{color:var(--ink-soft);text-decoration:none;padding:2px 1px;border-bottom:1px solid transparent;}
 .lang-switch a:hover{color:var(--accent);}
 .lang-switch a.active{color:var(--accent);border-color:var(--accent);}
