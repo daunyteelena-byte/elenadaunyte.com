@@ -309,16 +309,7 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .video-caption{margin-top:18px;color:var(--ink-soft);font-size:16px;}
 
 /* Poetry */
-.poetry{margin-top:72px;padding-top:56px;border-top:1px solid var(--line);}
-.poetry-head{
-  font-family:'Playfair Display', Georgia, serif;
-  font-size:clamp(24px,3vw,30px); margin:0 0 10px;
-}
-.poetry-head::after{
-  content:''; display:block; width:9px; height:9px;
-  background:var(--accent); transform:rotate(45deg); margin-top:16px;
-}
-.poetry-intro{margin:26px 0 34px; max-width:560px; color:var(--ink-soft);}
+.poetry-intro{margin:0 0 40px; max-width:560px; color:var(--ink-soft);}
 .poetry-intro em{color:var(--ink); font-style:italic;}
 .poems{margin-bottom:56px;}
 .poem{margin:0 0 48px; max-width:540px;}
@@ -345,7 +336,7 @@ section{padding:78px 0;border-top:1px solid var(--line);}
   margin-top:8px; color:var(--ink-soft); font-size:15px; letter-spacing:.02em;
 }
 @media (max-width:760px){
-  .poetry{margin-top:52px; padding-top:40px;}
+
   .poem-stanza{font-size:17px;}
   .gallery{column-count:1;}
 }
