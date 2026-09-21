@@ -308,6 +308,32 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .video-link:hover .video-play{transform:translate(-50%,-50%) scale(1.07);background:#fff;}
 .video-caption{margin-top:18px;color:var(--ink-soft);font-size:16px;}
 
+/* Poetry */
+.poetry{margin-top:72px;padding-top:56px;border-top:1px solid var(--line);}
+.poetry-head{
+  font-family:'Playfair Display', Georgia, serif;
+  font-size:clamp(24px,3vw,30px); margin:0 0 10px;
+}
+.poetry-head::after{
+  content:''; display:block; width:9px; height:9px;
+  background:var(--accent); transform:rotate(45deg); margin-top:16px;
+}
+.poetry-intro{margin:26px 0 34px; max-width:560px; color:var(--ink-soft);}
+.poetry-intro em{color:var(--ink); font-style:italic;}
+.gallery{column-count:2; column-gap:18px;}
+.gallery figure{break-inside:avoid; margin:0 0 18px;}
+.gallery img{
+  width:100%; height:auto; display:block; border-radius:3px;
+  box-shadow:0 18px 44px -20px rgba(22,51,48,.35), 0 0 0 1px var(--line);
+}
+.gallery-credit{
+  margin-top:8px; color:var(--ink-soft); font-size:15px; letter-spacing:.02em;
+}
+@media (max-width:760px){
+  .poetry{margin-top:52px; padding-top:40px;}
+  .gallery{column-count:1;}
+}
+
 blockquote{
   position:relative;
   margin:0; padding:30px 30px 30px 58px; border-left:3px solid var(--accent);
