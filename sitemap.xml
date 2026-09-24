@@ -3,6 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://elenadaunyte.com/</loc>
+    <lastmod>2026-09-24</lastmod>
     <xhtml:link rel="alternate" hreflang="lt" href="https://elenadaunyte.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://elenadaunyte.com/en/"/>
     <xhtml:link rel="alternate" hreflang="it" href="https://elenadaunyte.com/it/"/>
@@ -14,22 +15,62 @@
   </url>
   <url>
     <loc>https://elenadaunyte.com/en/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://elenadaunyte.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elenadaunyte.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://elenadaunyte.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elenadaunyte.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elenadaunyte.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://elenadaunyte.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elenadaunyte.com/"/>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://elenadaunyte.com/it/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://elenadaunyte.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elenadaunyte.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://elenadaunyte.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elenadaunyte.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elenadaunyte.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://elenadaunyte.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elenadaunyte.com/"/>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://elenadaunyte.com/de/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://elenadaunyte.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elenadaunyte.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://elenadaunyte.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elenadaunyte.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elenadaunyte.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://elenadaunyte.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elenadaunyte.com/"/>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://elenadaunyte.com/fr/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://elenadaunyte.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elenadaunyte.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://elenadaunyte.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elenadaunyte.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elenadaunyte.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://elenadaunyte.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elenadaunyte.com/"/>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://elenadaunyte.com/sv/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://elenadaunyte.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elenadaunyte.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://elenadaunyte.com/it/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://elenadaunyte.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://elenadaunyte.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://elenadaunyte.com/sv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elenadaunyte.com/"/>
     <priority>0.8</priority>
   </url>
 </urlset>
