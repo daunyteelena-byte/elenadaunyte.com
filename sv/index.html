@@ -101,7 +101,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=40">
+<link rel="stylesheet" href="../style.css?v=41">
 </head>
 <body>
 
@@ -174,13 +174,18 @@
   </section>
 
   <section id="about">
-    <div class="wrap about-grid">
+    <div class="wrap">
+      <details class="fold">
+        <summary>
+  <div class="section-head">
+            <div class="kicker">Om mig</div>
+            <h2>Musik som en resa, inte ett mål</h2>
+          </div>
+          <span class="fold-toggle"><span class="fold-c">Läs mer</span><span class="fold-o">Stäng</span></span>
+        </summary>
+        <div class="about-grid fold-body">
       <div>
-        <div class="section-head">
-          <div class="kicker">Om mig</div>
-          <h2>Musik som en resa, inte ett mål</h2>
-        </div>
-        <p>
+                <p>
           Elena Daunytė är vinnare av flera internationella tävlingar och Grand Prix, medlem av
           Čiurlionis-kvartetten och familjeensemblen „Regnum Musicale“. Som solist och
           kammarmusiker har hon uppträtt vid tävlingar, festivaler och mästarkurser vars geografi
@@ -214,6 +219,9 @@
         bli bättre.“
         <footer>Elena Daunytė</footer>
       </blockquote>
+        </div>
+      </details>
+
     </div>
   </section>
 
@@ -384,11 +392,16 @@ Tai, ką įkvėpęs kurstei savyje.</p>
 
   <section id="awards" class="awards">
     <div class="wrap">
-      <div class="section-head">
-        <div class="kicker">Erkännande</div>
-        <h2>Utmärkelser och hedersbetygelser</h2>
-      </div>
-      <p>Elena är vinnare av flera internationella tävlingar och Grand Prix. För sin aktiva
+      <details class="fold">
+        <summary>
+  <div class="section-head">
+          <div class="kicker">Erkännande</div>
+          <h2>Utmärkelser och hedersbetygelser</h2>
+        </div>
+          <span class="fold-toggle"><span class="fold-c">Läs mer</span><span class="fold-o">Stäng</span></span>
+        </summary>
+        <div class="fold-body">
+            <p>Elena är vinnare av flera internationella tävlingar och Grand Prix. För sin aktiva
          konsert- och tävlingsverksamhet som för Litauens namn utomlands har hon vid flera
          tillfällen mottagit hedersomnämnanden från Republiken Litauens presidenter, och för sina
          musikaliska prestationer tilldelades hon Drottning Mortas pris.</p>
@@ -400,6 +413,9 @@ Tai, ką įkvėpęs kurstei savyje.</p>
         <li>Drottning Mortas pris för musikaliska prestationer</li>
         <li>Vinnare av flera internationella cellotävlingar</li>
       </ul>
+        </div>
+      </details>
+
     </div>
   </section>
 
@@ -431,6 +447,16 @@ Tai, ką įkvėpęs kurstei savyje.</p>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  var openHashTarget = function(){
+    var id = (location.hash || '').slice(1);
+    if (!id) return;
+    var sec = document.getElementById(id);
+    var d = sec && sec.querySelector('details.fold');
+    if (d) d.open = true;
+  };
+  window.addEventListener('hashchange', openHashTarget);
+  openHashTarget();
 
   document.querySelectorAll('.audio-btn').forEach(function(btn){
     var audio = new Audio(btn.dataset.audio);

@@ -102,7 +102,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=40">
+<link rel="stylesheet" href="style.css?v=41">
 </head>
 <body>
 
@@ -175,13 +175,18 @@
   </section>
 
   <section id="about">
-    <div class="wrap about-grid">
+    <div class="wrap">
+      <details class="fold">
+        <summary>
+  <div class="section-head">
+            <div class="kicker">Apie</div>
+            <h2>Muzika kaip kelionė, ne tikslas</h2>
+          </div>
+          <span class="fold-toggle"><span class="fold-c">Skaityti</span><span class="fold-o">Suskleisti</span></span>
+        </summary>
+        <div class="about-grid fold-body">
       <div>
-        <div class="section-head">
-          <div class="kicker">Apie</div>
-          <h2>Muzika kaip kelionė, ne tikslas</h2>
-        </div>
-        <p>
+                <p>
           Elena Daunytė — daugelio tarptautinių konkursų laureatė bei Grand Prix laimėtoja, Čiurlionio
           kvarteto ir šeimos ansamblio „Regnum Musicale“ narė. Kaip solistė ir kamerinės muzikos
           atlikėja ji yra pasirodžiusi konkursuose, festivaliuose ir meistriškumo kursuose, kurių
@@ -213,6 +218,9 @@
         „Svarbiausia — augimas ir maksimalus džiaugsmas iš paties tobulėjimo proceso.“
         <footer>Elena Daunytė</footer>
       </blockquote>
+        </div>
+      </details>
+
     </div>
   </section>
 
@@ -382,11 +390,16 @@ Tai, ką įkvėpęs kurstei savyje.</p>
 
   <section id="awards" class="awards">
     <div class="wrap">
-      <div class="section-head">
-        <div class="kicker">Pripažinimas</div>
-        <h2>Apdovanojimai ir padėkos</h2>
-      </div>
-      <p>Elena yra daugelio tarptautinių konkursų laureatė ir Grand Prix laimėtoja. Už aktyvią
+      <details class="fold">
+        <summary>
+  <div class="section-head">
+          <div class="kicker">Pripažinimas</div>
+          <h2>Apdovanojimai ir padėkos</h2>
+        </div>
+          <span class="fold-toggle"><span class="fold-c">Skaityti</span><span class="fold-o">Suskleisti</span></span>
+        </summary>
+        <div class="fold-body">
+            <p>Elena yra daugelio tarptautinių konkursų laureatė ir Grand Prix laimėtoja. Už aktyvią
          koncertinę ir konkursinę veiklą bei Lietuvos vardo garsinimą užsienyje ji ne kartą yra
          gavusi Lietuvos Respublikos prezidentų padėkas, o už muzikinius pasiekimus apdovanota
          Karalienės Mortos premija.</p>
@@ -397,6 +410,9 @@ Tai, ką įkvėpęs kurstei savyje.</p>
         <li>Karalienės Mortos premija už muzikinius pasiekimus</li>
         <li>Daugelio tarptautinių violončelės konkursų laureatė</li>
       </ul>
+        </div>
+      </details>
+
     </div>
   </section>
 
@@ -427,6 +443,16 @@ Tai, ką įkvėpęs kurstei savyje.</p>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  var openHashTarget = function(){
+    var id = (location.hash || '').slice(1);
+    if (!id) return;
+    var sec = document.getElementById(id);
+    var d = sec && sec.querySelector('details.fold');
+    if (d) d.open = true;
+  };
+  window.addEventListener('hashchange', openHashTarget);
+  openHashTarget();
 
   document.querySelectorAll('.audio-btn').forEach(function(btn){
     var audio = new Audio(btn.dataset.audio);
