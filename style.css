@@ -325,7 +325,14 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 /* Poetry */
 .poetry-intro{margin:0 0 40px; max-width:560px; color:var(--ink-soft);}
 .poetry-intro em{color:var(--ink); font-style:italic;}
-.poems{margin-bottom:56px;}
+.poems{margin-bottom:40px;}
+
+/* the order button belongs to the poem above it, so it sits close */
+.book-buy{margin:0 0 56px;}
+.book-price{margin:0 0 14px; font-family:'Playfair Display',Georgia,serif; font-size:26px; color:var(--ink);}
+.book-price span{font-family:'EB Garamond',serif; font-size:15px; color:var(--ink-soft); margin-left:8px;}
+.book-buy .btn{margin-bottom:16px;}
+.book-buy-note{margin:0; max-width:540px; font-size:15px; color:var(--ink-soft);}
 .poem{margin:0 0 48px; max-width:540px;}
 .poem:last-child{margin-bottom:0;}
 .poem-title{
