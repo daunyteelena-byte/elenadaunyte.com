@@ -370,6 +370,11 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .poem-meta{margin:26px 0 0; font-size:15px; font-style:italic; color:var(--ink-soft);}
 
 .gallery{column-count:2; column-gap:18px;}
+/* one photograph carries the section; the rest wait behind a click */
+.gallery-lead{column-count:1; max-width:540px;}
+.fold-gallery{margin-top:6px;}
+.fold-gallery .fold-body{margin-top:22px;}
+.fold-gallery + .gallery-credit{margin-top:18px;}
 .gallery figure{break-inside:avoid; margin:0 0 18px;}
 .gallery img{
   width:100%; height:auto; display:block; border-radius:3px;
