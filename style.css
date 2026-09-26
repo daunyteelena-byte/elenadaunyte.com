@@ -271,17 +271,31 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 
 /* Collapsible sections: the heading always shows, the reading is opt-in */
 .fold summary{list-style:none; cursor:pointer; display:block;}
-/* a folded section still says something; the link continues the thought */
-.fold-teaser{margin:20px 0 0; max-width:620px; color:var(--ink-soft);}
+/* a folded section shows the real opening, cut mid-thought and faded out,
+   so it reads as a text that continues rather than a section with one line */
+.fold-teaser{
+  margin:20px 0 0; max-width:620px; color:var(--ink-soft);
+  line-height:1.75; max-height:7em; overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,#000 48%,transparent 100%);
+          mask-image:linear-gradient(180deg,#000 48%,transparent 100%);
+}
 .fold[open] .fold-teaser{display:none;}
 .fold summary::-webkit-details-marker{display:none;}
 .fold summary .section-head{margin-bottom:0;}
+/* the section toggles are proper buttons; the gallery's stays a quiet link
+   so it does not compete with the order button above it */
 .fold-toggle{
-  display:inline-block; margin-top:20px;
-  font-size:16px; color:var(--accent); letter-spacing:.02em; white-space:nowrap;
-  border-bottom:1px solid var(--line); padding-bottom:3px; transition:.2s ease;
+  display:inline-block; margin-top:22px;
+  font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.02em;
+  color:var(--ink); white-space:nowrap; transition:.2s ease;
+  padding:11px 24px; border:1px solid var(--ink-soft); border-radius:2px;
 }
-.fold-gallery .fold-toggle{margin-top:0;}
+.fold summary:hover .fold-toggle,
+.fold summary:focus-visible .fold-toggle{border-color:var(--accent); color:var(--accent);}
+.fold-gallery .fold-toggle{
+  margin-top:0; padding:0 0 3px; border:0; border-bottom:1px solid var(--line);
+  color:var(--accent);
+}
 .fold summary:hover .fold-toggle,
 .fold summary:focus-visible .fold-toggle{border-color:var(--accent);}
 .fold-toggle::after{content:'\2193'; margin-left:8px; display:inline-block; transition:transform .2s ease;}
