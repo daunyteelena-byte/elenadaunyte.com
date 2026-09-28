@@ -79,10 +79,27 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
   nav ul{order:3; flex-basis:100%; margin-top:2px;}
 }
 nav a:hover{color:var(--accent);}
-.lang-switch{display:flex;gap:8px;font-size:13px;letter-spacing:.03em;text-transform:uppercase;}
-.lang-switch a{color:var(--ink-soft);text-decoration:none;padding:2px 1px;border-bottom:1px solid transparent;}
-.lang-switch a:hover{color:var(--accent);}
-.lang-switch a.active{color:var(--accent);border-color:var(--accent);}
+/* the current language is the control; the other five wait behind it */
+.lang-switch{position:relative; font-size:13px; letter-spacing:.03em; text-transform:uppercase;}
+.lang-switch summary{
+  list-style:none; cursor:pointer; color:var(--accent);
+  padding:3px 2px; border-bottom:1px solid var(--accent); transition:.2s ease;
+}
+.lang-switch summary::-webkit-details-marker{display:none;}
+.lang-switch summary::after{content:'\25BE'; margin-left:6px; font-size:9px; vertical-align:2px;}
+.lang-switch summary:hover{color:var(--ink);border-color:var(--ink);}
+.lang-menu{
+  position:absolute; top:calc(100% + 10px); right:0; z-index:40;
+  display:flex; flex-direction:column; gap:2px;
+  padding:10px 4px; min-width:66px;
+  background:var(--card); border:1px solid var(--line); border-radius:2px;
+  box-shadow:0 16px 40px -22px rgba(22,51,48,.45);
+}
+.lang-menu a{
+  color:var(--ink-soft); text-decoration:none; padding:5px 12px; text-align:center;
+  transition:.15s ease;
+}
+.lang-menu a:hover{color:var(--accent); background:var(--bg-2);}
 
 @media (max-width:760px){
   nav{padding:14px 20px;}
@@ -93,7 +110,7 @@ nav a:hover{color:var(--accent);}
   nav a{font-size:14px;padding:0 10px;}
   nav a:first-child{padding-left:0;}
   .nav-right{width:100%;justify-content:space-between;}
-  .lang-switch{gap:7px;}
+  .lang-menu{left:0; right:auto;}
 }
 
 /* Hero */

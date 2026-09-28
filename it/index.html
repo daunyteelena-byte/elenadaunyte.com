@@ -107,7 +107,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=45">
+<link rel="stylesheet" href="../style.css?v=46">
 </head>
 <body>
 
@@ -125,14 +125,16 @@
         <li><a href="#awards">Riconoscimenti</a></li>
         <li><a href="#contact">Contatti</a></li>
       </ul>
-      <div class="lang-switch">
-        <a href="/">LT</a>
-        <a href="/en/">EN</a>
-        <a href="/it/" class="active">IT</a>
-        <a href="/de/">DE</a>
-        <a href="/fr/">FR</a>
-        <a href="/sv/">SV</a>
-      </div>
+      <details class="lang-switch">
+        <summary aria-label="Lingua">IT</summary>
+        <div class="lang-menu">
+          <a href="/" hreflang="lt">LT</a>
+          <a href="/en/" hreflang="en">EN</a>
+          <a href="/de/" hreflang="de">DE</a>
+          <a href="/fr/" hreflang="fr">FR</a>
+          <a href="/sv/" hreflang="sv">SV</a>
+        </div>
+      </details>
     </div>
   </nav>
 </header>
@@ -490,6 +492,17 @@ Tai, ką įkvėpęs kurstei savyje.</p>
   };
   window.addEventListener('hashchange', openHashTarget);
   openHashTarget();
+
+  document.addEventListener('click', function(e){
+    document.querySelectorAll('details.lang-switch[open]').forEach(function(d){
+      if (!d.contains(e.target)) d.open = false;
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      document.querySelectorAll('details.lang-switch[open]').forEach(function(d){ d.open = false; });
+    }
+  });
 
   document.querySelectorAll('.audio-btn').forEach(function(btn){
     var audio = new Audio(btn.dataset.audio);
