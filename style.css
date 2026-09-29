@@ -539,6 +539,11 @@ blockquote footer{
 .contact-links a{color:#ffffff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;}
 .contact-links a:hover{border-color:#ffffff;}
 .socials{display:flex; gap:14px; align-items:center;}
+.back-top{
+  color:#ffffff; text-decoration:none; white-space:nowrap;
+  border-bottom:1px solid rgba(255,255,255,.4); padding-bottom:2px;
+}
+.back-top:hover{border-color:#ffffff;}
 .social{
   display:inline-flex; align-items:center; justify-content:center;
   width:44px; height:44px; border-radius:50%;
@@ -548,6 +553,8 @@ blockquote footer{
 .social:hover,.social:focus-visible{background:#ffffff; color:var(--accent); border-color:#ffffff;}
 @media (max-width:760px){
   .socials{margin-top:4px;}
+  /* the arrow closes the box, well clear of the icons above it */
+  .back-top{margin-top:16px;}
 }
 
 footer.site{padding:54px 0 40px;text-align:center;color:var(--ink-soft);font-size:15px;}
