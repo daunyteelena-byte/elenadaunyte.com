@@ -107,33 +107,38 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=60">
+<link rel="stylesheet" href="../style.css?v=61">
 </head>
 <body>
 
 <header class="site">
   <nav>
     <a href="#top" class="brand"><img class="brand-mark" src="../img/logo.png?v=3" width="46" height="46" alt="" aria-hidden="true"><span>Elena <em>Daunytė</em></span></a>
-    <div class="nav-right">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#creative">Music</a></li>
-        <li><a href="#solo">Solo</a></li>
-        <li><a href="#poetry">Poetry</a></li>
-        <li><a href="#ensembles">Ensembles</a></li>
-        <li><a href="#awards">Awards</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <details class="lang-switch">
+    <div class="nav-tools">
+        <details class="lang-switch">
         <summary aria-label="Language">EN</summary>
         <div class="lang-menu">
-          <a href="/" hreflang="lt">LT</a>
-          <a href="/it/" hreflang="it">IT</a>
-          <a href="/de/" hreflang="de">DE</a>
-          <a href="/fr/" hreflang="fr">FR</a>
-          <a href="/sv/" hreflang="sv">SV</a>
+        <a href="/" hreflang="lt">LT</a>
+        <a href="/it/" hreflang="it">IT</a>
+        <a href="/de/" hreflang="de">DE</a>
+        <a href="/fr/" hreflang="fr">FR</a>
+        <a href="/sv/" hreflang="sv">SV</a>
+        </div>
+        </details>
+      <details class="menu-switch">
+        <summary aria-label="Menu">Menu</summary>
+        <div class="menu-panel">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#creative">Music</a></li>
+            <li><a href="#solo">Solo</a></li>
+            <li><a href="#poetry">Poetry</a></li>
+            <li><a href="#ensembles">Ensembles</a></li>
+            <li><a href="#awards">Awards</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
       </details>
     </div>
@@ -566,13 +571,13 @@ Tai, ką įkvėpęs kurstei savyje.</p>
   openHashTarget();
 
   document.addEventListener('click', function(e){
-    document.querySelectorAll('details.lang-switch[open]').forEach(function(d){
+    document.querySelectorAll('details.lang-switch[open], details.menu-switch[open]').forEach(function(d){
       if (!d.contains(e.target)) d.open = false;
     });
   });
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') {
-      document.querySelectorAll('details.lang-switch[open]').forEach(function(d){ d.open = false; });
+      document.querySelectorAll('details.lang-switch[open], details.menu-switch[open]').forEach(function(d){ d.open = false; });
     }
   });
 
@@ -593,6 +598,15 @@ Tai, ką įkvėpęs kurstei savyje.</p>
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
     d.appendChild(b);
+  });
+
+
+  // picking a section should put the menu away again
+  document.querySelectorAll('.menu-panel a').forEach(function(a){
+    a.addEventListener('click', function(){
+      var d = a.closest('details.menu-switch');
+      if (d) d.open = false;
+    });
   });
 
   document.querySelectorAll('.audio-btn').forEach(function(btn){
