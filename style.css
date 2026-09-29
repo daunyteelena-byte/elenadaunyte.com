@@ -322,11 +322,13 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .fold-body{margin-top:44px;}
 .fold-close{
   display:inline-block; margin-top:30px; cursor:pointer;
-  background:none; color:var(--ink);
+  background:none; color:var(--accent);
   font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.02em;
-  padding:11px 24px; border:1px solid var(--ink-soft); border-radius:2px;
+  padding:11px 24px; border:1px solid var(--line); border-radius:2px;
   transition:.2s ease;
 }
+/* the same arrow as the toggle above, already pointing back up */
+.fold-close::after{content:'\2191'; margin-left:8px; display:inline-block;}
 .fold-close:hover,.fold-close:focus-visible{border-color:var(--accent); color:var(--accent);}
 
 /* About */
