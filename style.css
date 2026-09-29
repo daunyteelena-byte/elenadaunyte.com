@@ -322,7 +322,11 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 }
 .fold summary:hover .fold-toggle,
 .fold summary:focus-visible .fold-toggle{border-color:var(--accent); color:var(--accent);}
-.fold[open] .fold-toggle{color:var(--accent); border-color:var(--accent);}
+/* Once open, the only control is the one at the end — reading runs downward,
+   and a second button under the heading only pushed the text away from it.
+   A summary whose sole content was that button disappears with it. */
+.fold[open] .fold-toggle{display:none;}
+.fold[open] summary:not(:has(.section-head)){display:none;}
 .fold-gallery .fold-toggle{
   margin-top:0; padding:0 0 3px; border:0; border-bottom:1px solid var(--line);
   color:var(--accent);
