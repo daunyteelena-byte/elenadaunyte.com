@@ -107,7 +107,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=58">
+<link rel="stylesheet" href="../style.css?v=59">
 </head>
 <body>
 
@@ -583,6 +583,25 @@ Tai, ką įkvėpęs kurstei savyje.</p>
     if (e.key === 'Escape') {
       document.querySelectorAll('details.lang-switch[open]').forEach(function(d){ d.open = false; });
     }
+  });
+
+
+  // Once a fold is open its only control is back at the top. Give every fold a
+  // second one at the end, so closing does not mean scrolling up to find it.
+  document.querySelectorAll('details.fold').forEach(function(d){
+    var label = d.querySelector('.fold-o');
+    if (!label || d.querySelector('.fold-close')) return;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'fold-close';
+    b.textContent = label.textContent;
+    b.addEventListener('click', function(){
+      var summary = d.querySelector('summary');
+      var top = summary.getBoundingClientRect().top + window.scrollY - 110;
+      d.open = false;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+    d.appendChild(b);
   });
 
   document.querySelectorAll('.audio-btn').forEach(function(btn){

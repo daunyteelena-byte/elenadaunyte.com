@@ -320,6 +320,14 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .fold[open] .fold-c{display:none;}
 .fold[open] .fold-o{display:inline;}
 .fold-body{margin-top:44px;}
+.fold-close{
+  display:inline-block; margin-top:30px; cursor:pointer;
+  background:none; color:var(--ink);
+  font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.02em;
+  padding:11px 24px; border:1px solid var(--ink-soft); border-radius:2px;
+  transition:.2s ease;
+}
+.fold-close:hover,.fold-close:focus-visible{border-color:var(--accent); color:var(--accent);}
 
 /* About */
 .about-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:56px;align-items:start;}
