@@ -478,6 +478,17 @@ blockquote footer{
 .contact-links{display:flex;flex-direction:column;gap:10px;align-items:flex-start;}
 .contact-links a{color:#ffffff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;}
 .contact-links a:hover{border-color:#ffffff;}
+.socials{display:flex; gap:14px; align-items:center;}
+.social{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:44px; height:44px; border-radius:50%;
+  color:#ffffff; border:1px solid rgba(255,255,255,.45);
+  transition:.2s ease;
+}
+.social:hover,.social:focus-visible{background:#ffffff; color:var(--accent); border-color:#ffffff;}
+@media (max-width:760px){
+  .socials{margin-top:4px;}
+}
 
 footer.site{padding:54px 0 40px;text-align:center;color:var(--ink-soft);font-size:15px;}
 footer.site p{margin:0;}
