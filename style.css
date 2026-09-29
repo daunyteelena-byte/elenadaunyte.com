@@ -72,9 +72,9 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
 .nav-tools{display:flex; align-items:center; gap:22px;}
 .menu-switch{position:relative;}
 .menu-switch summary{
-  list-style:none; cursor:pointer; color:var(--ink);
+  list-style:none; cursor:pointer; color:var(--accent);
   font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.03em;
-  padding:9px 18px 9px 16px; border:1px solid var(--ink-soft); border-radius:2px;
+  padding:9px 18px 9px 16px; border:1px solid var(--accent); border-radius:2px;
   transition:.2s ease; white-space:nowrap;
 }
 .menu-switch summary::-webkit-details-marker{display:none;}
@@ -83,10 +83,8 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
   width:15px; height:9px;
   border-top:1px solid currentColor; border-bottom:1px solid currentColor;
 }
-.menu-switch summary:hover,.menu-switch summary:focus-visible{
-  border-color:var(--accent); color:var(--accent);
-}
-.menu-switch[open] summary{border-color:var(--accent); color:var(--accent);}
+.menu-switch summary:hover,.menu-switch summary:focus-visible,
+.menu-switch[open] summary{background:var(--bg-2);}
 .menu-panel{
   position:absolute; top:calc(100% + 12px); right:0; z-index:45;
   min-width:212px; padding:12px 0;
