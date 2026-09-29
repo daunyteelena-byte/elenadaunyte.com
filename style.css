@@ -3,7 +3,7 @@
   --bg-2:#eef8f6;
   --ink:#163330;
   --ink-soft:#5f7f7a;
-  --accent:#4fb8a8;
+  --accent:#4fb8a8; --accent-muted:#65a09e;
   --accent-2:#7c8894;
   --line:#d6ece8;
   --card:#ffffff;
@@ -322,6 +322,7 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 }
 .fold summary:hover .fold-toggle,
 .fold summary:focus-visible .fold-toggle{border-color:var(--accent); color:var(--accent);}
+.fold[open] .fold-toggle{color:var(--accent); border-color:var(--accent);}
 .fold-gallery .fold-toggle{
   margin-top:0; padding:0 0 3px; border:0; border-bottom:1px solid var(--line);
   color:var(--accent);
@@ -338,7 +339,7 @@ section{padding:78px 0;border-top:1px solid var(--line);}
   display:inline-block; margin-top:30px; cursor:pointer;
   background:none; color:var(--accent);
   font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.02em;
-  padding:11px 24px; border:1px solid var(--line); border-radius:2px;
+  padding:11px 24px; border:1px solid var(--accent); border-radius:2px;
   transition:.2s ease;
 }
 /* the same arrow as the toggle above, already pointing back up */
@@ -387,16 +388,15 @@ section{padding:78px 0;border-top:1px solid var(--line);}
    the one inside Poezija stays a quiet link so it does not compete with it */
 #gallery .fold-toggle{
   display:inline-block; margin:0; padding:13px 26px;
-  /* --accent-2 is where the contact box's gradient ends: grey with a green
-     cast. Solid, it stays quieter than that box instead of twinning it. */
-  background:var(--accent-2); color:#ffffff;
+  /* muted emerald: quieter than the book button, still unmistakably green */
+  background:var(--accent-muted); color:#ffffff;
   border:1px solid transparent; border-radius:2px; border-bottom-width:1px;
   font-family:'EB Garamond',serif; font-size:17px; letter-spacing:.02em;
   transition:.2s ease;
 }
 #gallery summary:hover .fold-toggle,
 #gallery summary:focus-visible .fold-toggle{
-  background:var(--ink); color:#ffffff;
+  background:var(--accent); color:#ffffff;
 }
 .video-wrap{
   position:relative; padding-top:56.25%; height:0; overflow:hidden;
