@@ -65,7 +65,9 @@ nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between
 .brand-mark{width:46px;height:46px;flex:none;mix-blend-mode:multiply;}
 .brand em{color:var(--accent);font-style:italic;}
 .nav-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
+nav ul{list-style:none;display:flex;gap:21px;margin:0;padding:0;
+  overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+nav ul::-webkit-scrollbar{display:none;}
 nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.02em;white-space:nowrap;}
 
 /* Eight menu items will not fit one line beside the name, so the header is
@@ -338,6 +340,19 @@ section{padding:78px 0;border-top:1px solid var(--line);}
    are only fetched once somebody opens it */
 #gallery{padding:54px 0;}
 #gallery .fold-gallery{margin:0;}
+/* the page-foot gallery wears the same solid button as "Įsigyti knygą";
+   the one inside Poezija stays a quiet link so it does not compete with it */
+#gallery .fold-toggle{
+  display:inline-block; margin:0; padding:13px 26px;
+  background:var(--accent); color:#ffffff;
+  border:1px solid var(--accent); border-radius:2px; border-bottom-width:1px;
+  font-family:'EB Garamond',serif; font-size:17px; letter-spacing:.02em;
+  transition:.2s ease;
+}
+#gallery summary:hover .fold-toggle,
+#gallery summary:focus-visible .fold-toggle{
+  background:var(--accent-2); border-color:var(--accent-2); color:#ffffff;
+}
 .video-wrap{
   position:relative; padding-top:56.25%; height:0; overflow:hidden;
   border-radius:4px; background:var(--card);
