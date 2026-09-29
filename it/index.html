@@ -107,7 +107,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=47">
+<link rel="stylesheet" href="../style.css?v=48">
 </head>
 <body>
 
@@ -503,6 +503,50 @@ Tai, ką įkvėpęs kurstei savyje.</p>
       document.querySelectorAll('details.lang-switch[open]').forEach(function(d){ d.open = false; });
     }
   });
+
+
+  // A visitor from abroad lands on the Lithuanian page; offer their language
+  // rather than redirecting, so Googlebot still reaches every version.
+  (function(){
+    var paths = {lt:'/', en:'/en/', it:'/it/', de:'/de/', fr:'/fr/', sv:'/sv/'};
+    var says = {
+      lt:'Šis puslapis yra ir lietuviškai',
+      en:'This page is also available in English',
+      it:'Questa pagina è disponibile anche in italiano',
+      de:'Diese Seite ist auch auf Deutsch verfügbar',
+      fr:'Cette page est aussi disponible en français',
+      sv:'Den här sidan finns även på svenska'
+    };
+    var here = (document.documentElement.lang || 'lt').slice(0,2);
+    var wanted = null;
+    var prefs = navigator.languages || [navigator.language || ''];
+    for (var i = 0; i < prefs.length; i++) {
+      var code = String(prefs[i]).slice(0,2).toLowerCase();
+      if (paths[code]) { wanted = code; break; }
+    }
+    if (!wanted || wanted === here) return;
+    try { if (localStorage.getItem('langHint') === wanted) return; } catch (e) {}
+
+    var bar = document.createElement('div');
+    bar.className = 'lang-hint';
+    var link = document.createElement('a');
+    link.href = paths[wanted];
+    link.hreflang = wanted;
+    link.textContent = says[wanted];
+    var close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'lang-hint-close';
+    close.setAttribute('aria-label', 'Close');
+    close.textContent = '\u00D7';
+    close.addEventListener('click', function(){
+      bar.remove();
+      try { localStorage.setItem('langHint', wanted); } catch (e) {}
+    });
+    bar.appendChild(link);
+    bar.appendChild(close);
+    var header = document.querySelector('header.site');
+    header.parentNode.insertBefore(bar, header.nextSibling);
+  })();
 
   document.querySelectorAll('.audio-btn').forEach(function(btn){
     var audio = new Audio(btn.dataset.audio);
