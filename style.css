@@ -379,6 +379,20 @@ section{padding:78px 0;border-top:1px solid var(--line);}
   font-style:italic; color:var(--ink) !important;}
 .event-leads{margin:0 0 16px; padding-left:20px; color:var(--ink-soft);}
 .event-leads li{margin-bottom:6px;}
+
+/* interviews elsewhere: the title leads, the outlet names itself beneath */
+.media-list{list-style:none; margin:0; padding:0; max-width:620px;}
+.media-list li{padding:18px 0; border-top:1px solid var(--line);}
+.media-list li:first-child{border-top:0; padding-top:0;}
+.media-list a{
+  display:block; color:var(--ink); text-decoration:none; font-size:19px;
+  line-height:1.45; transition:.2s ease;
+}
+.media-list a:hover{color:var(--accent);}
+.media-source{
+  display:block; margin-top:7px; color:var(--ink-soft);
+  font-size:14px; letter-spacing:.04em; text-transform:uppercase;
+}
 .event-meta strong{color:var(--ink); font-weight:600;}
 
 /* a vertical film: held to a portrait card so it does not tower on desktop */
