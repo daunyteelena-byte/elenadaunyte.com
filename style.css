@@ -408,6 +408,7 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 /* a credit belongs to the photographs above it, so the air goes below it —
    that is what separates one photographer's group from the next */
 #gallery .gallery-credit + .gallery{margin-top:56px;}
+#gallery .gallery-credit + .fold-gallery{margin-top:40px;}
 /* the page-foot gallery wears the same solid button as "Įsigyti knygą";
    the one inside Poezija stays a quiet link so it does not compete with it */
 #gallery .fold-toggle{
