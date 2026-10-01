@@ -417,19 +417,20 @@ section{padding:78px 0;border-top:1px solid var(--line);}
    that is what separates one photographer's group from the next */
 #gallery .gallery-credit + .gallery{margin-top:56px;}
 #gallery .gallery-credit + .fold-gallery{margin-top:40px;}
-/* a lighter emerald than the Kontaktai block below, so the foot of the page
-   gets lighter as it ends. White would wash out on a tint this pale, so the
-   lettering is the dark green of the text instead. */
+/* No filled colour here. Kontaktai sits directly below with its emerald
+   gradient, and any coloured block above it halves that section's effect —
+   so the gallery takes the outline the rest of the page uses, and the foot
+   of the page has exactly one block of colour. */
 #gallery .fold-toggle{
-  display:inline-block; margin:0; padding:13px 26px;
-  background:#bde4dc; color:var(--ink);
-  border:1px solid transparent; border-radius:2px;
-  font-family:'EB Garamond',serif; font-size:17px; letter-spacing:.02em;
+  display:inline-block; margin:0; padding:11px 24px;
+  background:none; color:var(--accent);
+  border:1px solid var(--accent); border-radius:2px;
+  font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.02em;
   transition:.2s ease;
 }
 #gallery summary:hover .fold-toggle,
 #gallery summary:focus-visible .fold-toggle{
-  background:#a3d9cf; color:var(--ink);
+  background:var(--bg-2); color:var(--accent);
 }
 .video-wrap{
   position:relative; padding-top:56.25%; height:0; overflow:hidden;
