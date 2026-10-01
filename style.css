@@ -403,6 +403,8 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 #gallery{padding:54px 0;}
 #gallery .fold-gallery{margin:0;}
 #gallery .gallery-lead{margin-top:26px;}
+#gallery .gallery-lead.fold-body{margin-top:44px;}
+#gallery .gallery + .gallery-credit{margin-top:14px;}
 /* the page-foot gallery wears the same solid button as "Įsigyti knygą";
    the one inside Poezija stays a quiet link so it does not compete with it */
 #gallery .fold-toggle{
