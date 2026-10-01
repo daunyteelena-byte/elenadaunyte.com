@@ -422,10 +422,11 @@ section{padding:78px 0;border-top:1px solid var(--line);}
    so the gallery takes the outline the rest of the page uses, and the foot
    of the page has exactly one block of colour. */
 #gallery .fold-toggle{
-  display:inline-block; margin:0; padding:11px 24px;
+  /* a doubled rule holds the eye without adding a second block of colour */
+  display:inline-block; margin:0; padding:12px 25px;
   background:none; color:var(--accent);
-  border:1px solid var(--accent); border-radius:2px;
-  font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.02em;
+  border:2px solid var(--accent); border-radius:2px;
+  font-family:'EB Garamond',serif; font-size:17px; letter-spacing:.02em;
   transition:.2s ease;
 }
 #gallery summary:hover .fold-toggle,
