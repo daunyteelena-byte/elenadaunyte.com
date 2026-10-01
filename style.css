@@ -411,19 +411,19 @@ section{padding:78px 0;border-top:1px solid var(--line);}
    that is what separates one photographer's group from the next */
 #gallery .gallery-credit + .gallery{margin-top:56px;}
 #gallery .gallery-credit + .fold-gallery{margin-top:40px;}
-/* the gallery is the last section before Kontaktai, so its button carries
-   the foot of the page in the same bright emerald as "Įsigyti knygą" —
-   nothing below it for the colour to compete with */
+/* a lighter emerald than the Kontaktai block below, so the foot of the page
+   gets lighter as it ends. White would wash out on a tint this pale, so the
+   lettering is the dark green of the text instead. */
 #gallery .fold-toggle{
   display:inline-block; margin:0; padding:13px 26px;
-  background:var(--accent); color:#ffffff;
+  background:#8ccdc2; color:var(--ink);
   border:1px solid transparent; border-radius:2px;
   font-family:'EB Garamond',serif; font-size:17px; letter-spacing:.02em;
   transition:.2s ease;
 }
 #gallery summary:hover .fold-toggle,
 #gallery summary:focus-visible .fold-toggle{
-  background:var(--ink); color:#ffffff;
+  background:#74c2b5; color:var(--ink);
 }
 .video-wrap{
   position:relative; padding-top:56.25%; height:0; overflow:hidden;
