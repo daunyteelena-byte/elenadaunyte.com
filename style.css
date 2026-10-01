@@ -191,7 +191,10 @@ nav a:hover{color:var(--accent);}
 .hero-text{flex:1 1 520px;min-width:0;}
 .hero-photo{flex:0 0 280px;display:flex;flex-direction:column;align-items:center;gap:20px;}
 .hero-photo .kicker{
-  margin:0; font-size:12px; letter-spacing:.18em; text-align:center;
+  /* letter-spacing leaves a gap after the last letter too, so centred text
+     lands half a space to the left of the photograph below it — the negative
+     right margin takes that phantom space back out of the centring */
+  margin:0 -.18em 0 0; font-size:12px; letter-spacing:.18em; text-align:center;
 }
 .kicker-mobile{display:none;}
 .hero-photo-frame{position:relative;width:100%;max-width:280px;}
