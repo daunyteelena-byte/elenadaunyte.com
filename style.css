@@ -396,7 +396,7 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .event-meta strong{color:var(--ink); font-weight:600;}
 
 /* a vertical film: held to a portrait card so it does not tower on desktop */
-.video-upright{max-width:380px; margin:8px 0 46px;}
+.video-upright{max-width:380px; margin:46px 0 46px;}
 
 @media (max-width:760px){ .video-upright{max-width:78%;} }
 
