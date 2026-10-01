@@ -321,11 +321,11 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .fold-toggle{
   display:inline-block; margin-top:22px;
   font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.02em;
-  color:var(--ink); white-space:nowrap; transition:.2s ease;
-  padding:11px 24px; border:1px solid var(--ink-soft); border-radius:2px;
+  color:var(--accent); white-space:nowrap; transition:.2s ease;
+  padding:11px 24px; border:1px solid var(--accent); border-radius:2px;
 }
 .fold summary:hover .fold-toggle,
-.fold summary:focus-visible .fold-toggle{border-color:var(--accent); color:var(--accent);}
+.fold summary:focus-visible .fold-toggle{background:var(--bg-2);}
 /* Once open, the only control is the one at the end — reading runs downward,
    and a second button under the heading only pushed the text away from it.
    A summary whose sole content was that button disappears with it. */
