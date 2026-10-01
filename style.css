@@ -382,6 +382,12 @@ section{padding:78px 0;border-top:1px solid var(--line);}
   font-style:italic; color:var(--ink) !important;}
 .event-leads{margin:0 0 16px; padding-left:20px; color:var(--ink-soft);}
 .event-leads li{margin-bottom:6px;}
+/* the invitation that closes the evening's description: it answers the lead
+   line at the top, so it is set in the same italic rather than as body text */
+.event-close{
+  margin-top:26px; font-family:'Playfair Display',Georgia,serif;
+  font-size:19px; font-style:italic; color:var(--ink); max-width:560px;
+}
 
 /* interviews elsewhere: the title leads, the outlet names itself beneath */
 .media-list{list-style:none; margin:0; padding:0; max-width:620px;}
