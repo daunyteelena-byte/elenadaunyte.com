@@ -225,13 +225,17 @@ nav a:hover{color:var(--accent);}
   font-size:clamp(42px,7vw,74px);line-height:1.05;
   background:linear-gradient(100deg,
     var(--ink) 35%, #f2d488 46%, #fff4d6 50%, #f2d488 54%, var(--ink) 65%);
-  background-size:260% 100%;
+  /* The sweep must travel exactly one tile, or the loop snaps back and a
+     second copy of the band drifts into view — hence a fixed tile width and
+     a shift of the same number. Linear, too: easing makes the band stop dead
+     at the seam before starting again. */
+  background-size:1600px 100%;
   -webkit-background-clip:text; background-clip:text; color:transparent;
-  animation:shimmer 7s ease-in-out infinite;
+  animation:shimmer 7s linear infinite;
 }
 @keyframes shimmer{
-  0%{background-position:200% 0;}
-  100%{background-position:-100% 0;}
+  from{background-position:1600px 0;}
+  to{background-position:0 0;}
 }
 .hero h1 em{font-style:italic;color:var(--accent);-webkit-text-fill-color:var(--accent);}
 .hero p.lead{
