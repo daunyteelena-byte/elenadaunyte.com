@@ -396,11 +396,10 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .event-meta strong{color:var(--ink); font-weight:600;}
 
 /* a vertical film: held to a portrait card so it does not tower on desktop */
-.video-upright{max-width:380px; margin:46px 0 46px;}
+.video-upright{max-width:380px; margin:66px 0 46px;}
 
 @media (max-width:760px){ .video-upright{max-width:78%;} }
 
-#gallery{padding:54px 0;}
 #gallery .fold-gallery{margin:0;}
 #gallery .gallery-lead{margin-top:26px;}
 #gallery .gallery-lead.fold-body{margin-top:44px;}
