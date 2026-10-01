@@ -408,19 +408,18 @@ section{padding:78px 0;border-top:1px solid var(--line);}
    that is what separates one photographer's group from the next */
 #gallery .gallery-credit + .gallery{margin-top:56px;}
 #gallery .gallery-credit + .fold-gallery{margin-top:40px;}
-/* the page-foot gallery wears the same solid button as "Įsigyti knygą";
-   the one inside Poezija stays a quiet link so it does not compete with it */
+/* now that the gallery is a titled section of its own it needs no louder
+   button than the rest: it wears the same outline as "Skaityti" */
 #gallery .fold-toggle{
-  display:inline-block; margin:0; padding:13px 26px;
-  /* muted emerald: quieter than the book button, still unmistakably green */
-  background:var(--accent-muted); color:#ffffff;
-  border:1px solid transparent; border-radius:2px; border-bottom-width:1px;
-  font-family:'EB Garamond',serif; font-size:17px; letter-spacing:.02em;
+  display:inline-block; margin:0; padding:11px 24px;
+  background:none; color:var(--accent);
+  border:1px solid var(--accent); border-radius:2px;
+  font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.02em;
   transition:.2s ease;
 }
 #gallery summary:hover .fold-toggle,
 #gallery summary:focus-visible .fold-toggle{
-  background:var(--accent); color:#ffffff;
+  background:var(--bg-2); color:var(--accent); border-color:var(--accent);
 }
 .video-wrap{
   position:relative; padding-top:56.25%; height:0; overflow:hidden;
