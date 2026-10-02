@@ -476,6 +476,9 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 /* Poetry */
 .poetry-intro{margin:0 0 40px; max-width:560px; color:var(--ink-soft);}
 .poetry-intro em{color:var(--ink); font-style:italic;}
+/* a quiet credit under the book's line: where her poems have appeared */
+.poetry-pub{margin:-28px 0 40px; max-width:560px; font-size:14px;
+  letter-spacing:.02em; color:var(--accent-2);}
 .poems{margin-bottom:40px;}
 
 /* the order button belongs to the poem above it, so it sits close */
