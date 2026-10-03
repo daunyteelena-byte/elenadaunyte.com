@@ -673,7 +673,7 @@ Tai, ką įkvėpęs kurstei savyje.</p>
   <div class="wrap">
     <div id="zenklas">
       <img class="site-mark" src="../img/logo.png?v=3" width="80" height="80" alt="Elena Daunytė’s monogram" loading="lazy">
-      <details class="fold">
+      <details class="fold" data-closed>
         <summary><span class="fold-toggle"><span class="fold-c">About the mark</span><span class="fold-o">Close</span></span></summary>
         <div class="fold-body">
               <p>I drew the mark myself; the design was realised by the designer Kazimieras Dainovskis.</p>
@@ -695,7 +695,9 @@ Tai, ką įkvėpęs kurstei savyje.</p>
     var id = (location.hash || '').slice(1);
     if (!id) return;
     var sec = document.getElementById(id);
-    var d = sec && sec.querySelector('details.fold');
+    // a section opens when a link points at it, but the mark's note at the
+    // foot keeps the page quiet and waits to be asked
+    var d = sec && sec.querySelector('details.fold:not([data-closed])');
     if (d) d.open = true;
   };
   window.addEventListener('hashchange', openHashTarget);
