@@ -770,6 +770,16 @@ Tai, ką įkvėpęs kurstei savyje.</p>
   });
 
 
+  // Opening the mark's note from its own line should land exactly where the
+  // mark at the top of the page lands: the monogram first, the text beneath.
+  var markFold = document.querySelector('#zenklas details.fold');
+  if (markFold) {
+    markFold.addEventListener('toggle', function(){
+      if (!markFold.open) return;
+      setTimeout(function(){ goTo(document.getElementById('zenklas'), true); }, 0);
+    });
+  }
+
   // A click in the open text closes it too — but not when the reader is doing
   // something else: following a link, pressing a button, watching a film,
   // looking at a photograph, or selecting words to copy.
