@@ -80,13 +80,15 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
 .menu-switch{position:relative;}
 /* the menu is the one control every visitor needs, so it is filled rather
    than outlined — an outline on this pale header simply vanished */
+/* No box on a desktop: three rounds of lightening showed that what weighed on
+   the header was the filled rectangle, not its colour. The word carries itself
+   in the dark green of the text, underlined like "Apie ženklą" at the foot, so
+   the top and the bottom of the page speak the same way. */
 .menu-switch summary{
   list-style:none; cursor:pointer; color:var(--ink);
   font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.03em;
-  padding:10px 19px 10px 17px; border:1px solid #8ccdc2; border-radius:2px;
-  /* a lighter mint than the emerald it was; white lettering would wash out on
-     a tint this pale, so the words take the dark green of the text */
-  background:#8ccdc2;
+  padding:2px 2px 5px; border:0; border-bottom:1.5px solid var(--accent);
+  border-radius:0; background:none;
   transition:.2s ease; white-space:nowrap;
 }
 .menu-switch summary::-webkit-details-marker{display:none;}
@@ -96,7 +98,7 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
   border-top:1px solid currentColor; border-bottom:1px solid currentColor;
 }
 .menu-switch summary:hover,.menu-switch summary:focus-visible,
-.menu-switch[open] summary{background:#74c2b5; border-color:#74c2b5;}
+.menu-switch[open] summary{color:var(--accent); border-color:var(--accent);}
 .menu-panel{
   position:absolute; top:calc(100% + 12px); right:0; z-index:45;
   min-width:212px; padding:12px 0;
@@ -138,7 +140,8 @@ nav a:hover{color:var(--accent);}
      the outline is already plain to see; the fill is for the desktop header,
      where it was getting lost */
   .menu-switch summary{
-    background:none; color:var(--accent); border-color:var(--accent);
+    background:none; color:var(--accent);
+    border:1px solid var(--accent); border-radius:2px;
     padding:9px 18px 9px 16px;
   }
   .menu-switch summary:hover,.menu-switch summary:focus-visible,
