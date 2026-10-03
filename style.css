@@ -634,13 +634,17 @@ footer.site p{margin:0;}
 #zenklas .fold{max-width:560px; margin:0 auto;}
 #zenklas{margin-bottom:26px;}
 #zenklas .fold-toggle{
-  margin-top:0; padding:0 0 6px; border:0; border-bottom:2px solid var(--accent);
-  border-radius:0; background:none; font-size:15px; color:var(--ink-soft);
+  margin-top:0; padding:0; border:0; border-radius:0; background:none;
+  font-size:15px; color:var(--ink-soft);
+}
+/* the rule underlines the words only: carried by the whole button it would
+   run on under the arrow, and the words would then sit off its centre */
+#zenklas .fold-toggle .fold-c,
+#zenklas .fold-toggle .fold-o{
+  padding-bottom:6px; border-bottom:2px solid var(--accent);
 }
 #zenklas summary:hover .fold-toggle,
-#zenklas summary:focus-visible .fold-toggle{
-  color:var(--accent); border-color:var(--accent); background:none;
-}
+#zenklas summary:focus-visible .fold-toggle{color:var(--accent); background:none;}
 #zenklas .fold-body{margin-top:26px; text-align:left;}
 #zenklas .fold-body p{margin:0 0 16px; line-height:1.75;}
 #zenklas .fold-body p:last-child{margin-bottom:0;}
