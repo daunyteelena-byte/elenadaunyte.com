@@ -114,13 +114,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=88">
+<link rel="stylesheet" href="../style.css?v=89">
 </head>
 <body>
 
 <header class="site">
   <nav>
-    <a href="#top" class="brand"><img class="brand-mark" src="../img/logo.png?v=3" width="46" height="46" alt="" aria-hidden="true"><span>Elena <em>Daunytė</em></span></a>
+    <div class="brand"><a class="brand-mark-link" href="#zenklas" aria-label="Om märket"><img class="brand-mark" src="../img/logo.png?v=3" width="46" height="46" alt="" aria-hidden="true"></a><a class="brand-name" href="#top">Elena <em>Daunytė</em></a></div>
     <div class="nav-tools">
         <details class="lang-switch">
         <summary aria-label="Språk">SV</summary>
@@ -674,7 +674,19 @@ Tai, ką įkvėpęs kurstei savyje.</p>
 
 <footer class="site">
   <div class="wrap">
-    <img class="site-mark" src="../img/logo.png?v=3" width="80" height="80" alt="Elena Daunytės monogram" loading="lazy">
+    <div id="zenklas">
+      <img class="site-mark" src="../img/logo.png?v=3" width="80" height="80" alt="Elena Daunytės monogram" loading="lazy">
+      <details class="fold">
+        <summary><span class="fold-toggle"><span class="fold-c">Om märket</span><span class="fold-o">Stäng</span></span></summary>
+        <div class="fold-body">
+              <p>Märket skapade jag själv; formgivningen gjordes av designern Kazimieras Dainovskis.</p>
+              <p>Det märker min 33-årsdag och omsluter siffran för den 8 mars, dagen då jag föddes. Talen möts i andningscykelns bräckliga oändlighet.</p>
+              <p>Vid 32 råkade jag ut för en olycka: en bil korsade min väg och jag föll av motorcykeln. Två frakturer, en svår lungkontusion, åtta månaders rehabilitering, titan i kroppen. Den 8 mars, när jag fyllde 33, gav jag min första offentliga konsert efter olyckan — jag spelade, sjöng och läste mina egna dikter.</p>
+              <p>Den födelsedagen kallade jag en <em>Åter-Födelse</em>.</p>
+              <p>Samma märke trycktes på baksidan av „33 įkvėpimai“ den 6 mars 2026.</p>
+        </div>
+      </details>
+    </div>
     <p>&copy; <span id="year"></span> Elena Daunytė. Alla rättigheter förbehållna.</p>
   </div>
 </footer>

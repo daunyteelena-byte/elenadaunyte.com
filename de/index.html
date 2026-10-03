@@ -114,13 +114,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=88">
+<link rel="stylesheet" href="../style.css?v=89">
 </head>
 <body>
 
 <header class="site">
   <nav>
-    <a href="#top" class="brand"><img class="brand-mark" src="../img/logo.png?v=3" width="46" height="46" alt="" aria-hidden="true"><span>Elena <em>Daunytė</em></span></a>
+    <div class="brand"><a class="brand-mark-link" href="#zenklas" aria-label="Über das Zeichen"><img class="brand-mark" src="../img/logo.png?v=3" width="46" height="46" alt="" aria-hidden="true"></a><a class="brand-name" href="#top">Elena <em>Daunytė</em></a></div>
     <div class="nav-tools">
         <details class="lang-switch">
         <summary aria-label="Sprache">DE</summary>
@@ -678,7 +678,19 @@ Tai, ką įkvėpęs kurstei savyje.</p>
 
 <footer class="site">
   <div class="wrap">
-    <img class="site-mark" src="../img/logo.png?v=3" width="80" height="80" alt="Das Signet von Elena Daunytė" loading="lazy">
+    <div id="zenklas">
+      <img class="site-mark" src="../img/logo.png?v=3" width="80" height="80" alt="Das Signet von Elena Daunytė" loading="lazy">
+      <details class="fold">
+        <summary><span class="fold-toggle"><span class="fold-c">Über das Zeichen</span><span class="fold-o">Schließen</span></span></summary>
+        <div class="fold-body">
+              <p>Das Zeichen habe ich selbst entworfen; gestaltet hat es der Designer Kazimieras Dainovskis.</p>
+              <p>Es markiert meinen 33. Geburtstag und umfasst die Ziffer des 8. März, meines Geburtstages. Die Zahlen begegnen einander in der zerbrechlichen Unendlichkeit eines Atemzyklus.</p>
+              <p>Mit 32 hatte ich einen Unfall: ein Auto schnitt mir den Weg ab, und ich stürzte vom Motorrad. Zwei Brüche, eine schwere Lungenprellung, acht Monate Rehabilitation, Titan im Körper. An jenem 8. März, als ich 33 wurde, gab ich mein erstes öffentliches Konzert nach dem Unfall — ich spielte, ich sang und ich las meine eigenen Gedichte.</p>
+              <p>Diesen Geburtstag nannte ich eine <em>Wieder-Geburt</em>.</p>
+              <p>Dasselbe Zeichen wurde am 6. März 2026 auf die Rückseite von „33 įkvėpimai“ gedruckt.</p>
+        </div>
+      </details>
+    </div>
     <p>&copy; <span id="year"></span> Elena Daunytė. Alle Rechte vorbehalten.</p>
   </div>
 </footer>

@@ -114,13 +114,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=88">
+<link rel="stylesheet" href="../style.css?v=89">
 </head>
 <body>
 
 <header class="site">
   <nav>
-    <a href="#top" class="brand"><img class="brand-mark" src="../img/logo.png?v=3" width="46" height="46" alt="" aria-hidden="true"><span>Elena <em>Daunytė</em></span></a>
+    <div class="brand"><a class="brand-mark-link" href="#zenklas" aria-label="About the mark"><img class="brand-mark" src="../img/logo.png?v=3" width="46" height="46" alt="" aria-hidden="true"></a><a class="brand-name" href="#top">Elena <em>Daunytė</em></a></div>
     <div class="nav-tools">
         <details class="lang-switch">
         <summary aria-label="Language">EN</summary>
@@ -671,7 +671,19 @@ Tai, ką įkvėpęs kurstei savyje.</p>
 
 <footer class="site">
   <div class="wrap">
-    <img class="site-mark" src="../img/logo.png?v=3" width="80" height="80" alt="Elena Daunytė’s monogram" loading="lazy">
+    <div id="zenklas">
+      <img class="site-mark" src="../img/logo.png?v=3" width="80" height="80" alt="Elena Daunytė’s monogram" loading="lazy">
+      <details class="fold">
+        <summary><span class="fold-toggle"><span class="fold-c">About the mark</span><span class="fold-o">Close</span></span></summary>
+        <div class="fold-body">
+              <p>I drew the mark myself; the design was realised by the designer Kazimieras Dainovskis.</p>
+              <p>It marks my 33rd birthday, and it holds within it the numeral of 8 March, the day I was born. The numbers meet in the fragile infinity of a breathing cycle.</p>
+              <p>At 32 I had an accident: a car blocked my way and I fell from a motorcycle. Two fractures, a severe lung contusion, eight months of rehabilitation, titanium in my body. On that 8 March, turning 33, I gave my first public concert since the accident — I played, I sang, and I read my own poetry.</p>
+              <p>I called that birthday a <em>Re-Birth</em>.</p>
+              <p>The same mark was printed on the back cover of „33 įkvėpimai“ on 6 March 2026.</p>
+        </div>
+      </details>
+    </div>
     <p>&copy; <span id="year"></span> Elena Daunytė. All rights reserved.</p>
   </div>
 </footer>

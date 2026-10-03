@@ -115,13 +115,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=88">
+<link rel="stylesheet" href="style.css?v=89">
 </head>
 <body>
 
 <header class="site">
   <nav>
-    <a href="#top" class="brand"><img class="brand-mark" src="img/logo.png?v=3" width="46" height="46" alt="" aria-hidden="true"><span>Elena <em>Daunytė</em></span></a>
+    <div class="brand"><a class="brand-mark-link" href="#zenklas" aria-label="Apie ženklą"><img class="brand-mark" src="img/logo.png?v=3" width="46" height="46" alt="" aria-hidden="true"></a><a class="brand-name" href="#top">Elena <em>Daunytė</em></a></div>
     <div class="nav-tools">
         <details class="lang-switch">
         <summary aria-label="Kalba">LT</summary>
@@ -670,7 +670,19 @@ Tai, ką įkvėpęs kurstei savyje.</p>
 
 <footer class="site">
   <div class="wrap">
-    <img class="site-mark" src="img/logo.png?v=3" width="80" height="80" alt="Elenos Daunytės ženklas" loading="lazy">
+    <div id="zenklas">
+      <img class="site-mark" src="img/logo.png?v=3" width="80" height="80" alt="Elenos Daunytės ženklas" loading="lazy">
+      <details class="fold">
+        <summary><span class="fold-toggle"><span class="fold-c">Apie ženklą</span><span class="fold-o">Suskleisti</span></span></summary>
+        <div class="fold-body">
+              <p>Ženklą sukūriau pati, jo dizainą įgyvendino dizaineris Kazimieras Dainovskis.</p>
+              <p>Tai 33-iojo gimtadienio žymuo, apglėbiantis kovo 8-osios — mano gimimo dienos — skaitmenį. Skaičiai susitinka trapioje kvėpavimo ciklo begalybėje.</p>
+              <p>Būdama 32-ejų patyriau avariją: automobilis užstatė kelią ir aš kritau nuo motociklo. Du lūžiai, stiprus plaučių sutrenkimas, aštuoni mėnesiai reabilitacijos, titano metalai kūne. Tą kovo 8-ąją, sulaukusi 33-ejų, surengiau pirmąjį viešą koncertą po avarijos — jame grojau, dainavau ir skaičiau savo poeziją.</p>
+              <p>Tą gimtadienį pavadinau <em>AtGimimu</em>.</p>
+              <p>Tą patį ženklą 2026 m. kovo 6 d. išspausdinau ant „33 įkvėpimų“ galinio viršelio.</p>
+        </div>
+      </details>
+    </div>
     <p>&copy; <span id="year"></span> Elena Daunytė. Visos teisės saugomos.</p>
   </div>
 </footer>
