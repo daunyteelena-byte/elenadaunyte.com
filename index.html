@@ -780,6 +780,24 @@ Tai, ką įkvėpęs kurstei savyje.</p>
     });
   }
 
+  // The monogram at the foot opens its own account as well, and lands the
+  // same way. It is made a button here rather than in the markup so that it
+  // stays a plain image for anyone without scripting.
+  var siteMark = document.querySelector('.site-mark');
+  if (siteMark && markFold) {
+    siteMark.style.cursor = 'pointer';
+    siteMark.setAttribute('role', 'button');
+    siteMark.setAttribute('tabindex', '0');
+    var openMark = function(){
+      if (markFold.open) goTo(document.getElementById('zenklas'), true);
+      else markFold.open = true;
+    };
+    siteMark.addEventListener('click', openMark);
+    siteMark.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMark(); }
+    });
+  }
+
   // A click in the open text closes it too — but not when the reader is doing
   // something else: following a link, pressing a button, watching a film,
   // looking at a photograph, or selecting words to copy.
