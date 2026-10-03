@@ -640,8 +640,9 @@ footer.site p{margin:0;}
    arrow sits inside the button and pushes the right end out, so the same
    amount of room on the left keeps the words centred over the line. */
 #zenklas .fold-toggle{
-  margin-top:0; padding:0 0 6px 15px; border:0;
-  border-bottom:2px solid var(--accent);
+  margin-top:0; padding:0 0 5px 15px; border:0;
+  /* half a pixel between the hairline it was and the rule it became */
+  border-bottom:1.5px solid var(--accent);
   border-radius:0; background:none; font-size:15px; color:var(--ink-soft);
 }
 #zenklas summary:hover .fold-toggle,
