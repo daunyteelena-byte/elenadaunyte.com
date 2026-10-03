@@ -662,14 +662,16 @@ footer.site p{margin:0;}
 /* the mark's own story, kept behind a quiet line so the foot stays calm */
 #zenklas .fold{max-width:560px; margin:0 auto;}
 #zenklas{margin-bottom:26px;}
-/* The rule runs wider than the words and reaches past the first letter. The
-   arrow sits inside the button and pushes the right end out, so the same
-   amount of room on the left keeps the words centred over the line. */
+/* The rule belongs to the words: it reaches a little past the first and last
+   letter on each side and stops there, with the arrow outside it. Carried by
+   the whole button it ran on under the arrow and grew too long. */
 #zenklas .fold-toggle{
-  margin-top:0; padding:0 0 5px 15px; border:0;
-  /* half a pixel between the hairline it was and the rule it became */
-  border-bottom:1.5px solid var(--accent);
-  border-radius:0; background:none; font-size:15px; color:var(--ink-soft);
+  margin-top:0; padding:0; border:0; border-radius:0; background:none;
+  font-size:15px; color:var(--ink-soft);
+}
+#zenklas .fold-toggle .fold-c,
+#zenklas .fold-toggle .fold-o{
+  padding:0 8px 5px; border-bottom:1.5px solid var(--accent);
 }
 #zenklas summary:hover .fold-toggle,
 #zenklas summary:focus-visible .fold-toggle{color:var(--accent); background:none;}
