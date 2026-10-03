@@ -712,8 +712,14 @@ Tai, ką įkvėpęs kurstei savyje.</p>
     var id = (location.hash || '').slice(1);
     if (!id) return;
     var sec = document.getElementById(id);
-    var d = sec && sec.querySelector('details.fold');
-    if (d) d.open = true;
+    if (!sec) return;
+    var d = sec.querySelector('details.fold');
+    if (!d || d.open) return;
+    d.open = true;
+    // The jump lands before the fold opens, and at the foot of the page there
+    // is nothing below to scroll past, so it stops short. Opening makes the
+    // room — finish the move once it has.
+    setTimeout(function(){ sec.scrollIntoView(); }, 0);
   };
   window.addEventListener('hashchange', openHashTarget);
   openHashTarget();
