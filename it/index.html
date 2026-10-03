@@ -774,6 +774,23 @@ Tai, ką įkvėpęs kurstei savyje.</p>
   });
 
 
+  // A click in the open text closes it too — but not when the reader is doing
+  // something else: following a link, pressing a button, watching a film,
+  // looking at a photograph, or selecting words to copy.
+  document.addEventListener('click', function(e){
+    var body = e.target && e.target.closest && e.target.closest('.fold-body');
+    if (!body) return;
+    if (e.target.closest('a, button, summary, iframe, img, video, input, label')) return;
+    var sel = window.getSelection && window.getSelection().toString();
+    if (sel) return;
+    var d = body.closest('details.fold');
+    if (!d || !d.open) return;
+    var summary = d.querySelector('summary');
+    var top = summary.getBoundingClientRect().top + window.scrollY - 110;
+    d.open = false;
+    window.scrollTo({ top: top < 0 ? 0 : top, behavior: 'smooth' });
+  });
+
   // picking a section should put the menu away again
   document.querySelectorAll('.menu-panel a').forEach(function(a){
     a.addEventListener('click', function(){
