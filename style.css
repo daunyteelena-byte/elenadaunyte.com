@@ -474,12 +474,15 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .video-caption{margin-top:18px;color:var(--ink-soft);font-size:16px;}
 
 /* Poetry */
-.poetry-intro{margin:0 0 40px; max-width:560px; color:var(--ink-soft);}
+/* The poem comes first and the book's facts follow it: whoever reads the
+   section meets a poem, not a bibliography, and the publisher, the journal
+   and the order button then stand together as one answer to "where do I
+   get this?" */
+.poetry-intro{margin:0 0 6px; max-width:560px; color:var(--ink-soft);}
 .poetry-intro em{color:var(--ink); font-style:italic;}
-/* a quiet credit under the book's line: where her poems have appeared */
-.poetry-pub{margin:-28px 0 40px; max-width:560px; font-size:14px;
+.poetry-pub{margin:0 0 26px; max-width:560px; font-size:14px;
   letter-spacing:.02em; color:var(--accent-2);}
-.poems{margin-bottom:40px;}
+.poems{margin-bottom:44px;}
 
 /* the order button belongs to the poem above it, so it sits close */
 .book-buy{margin:0 0 56px;}
