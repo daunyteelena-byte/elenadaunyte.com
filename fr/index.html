@@ -718,8 +718,14 @@ Tai, ką įkvėpęs kurstei savyje.</p>
     d.open = true;
     // The jump lands before the fold opens, and at the foot of the page there
     // is nothing below to scroll past, so it stops short. Opening makes the
-    // room — finish the move once it has.
-    setTimeout(function(){ sec.scrollIntoView(); }, 0);
+    // room — finish the move once it has, stopping clear of the sticky header
+    // so the first thing in the section is not hidden behind it.
+    setTimeout(function(){
+      var bar = document.querySelector('header.site');
+      var gap = (bar ? bar.getBoundingClientRect().height : 0) + 20;
+      var top = sec.getBoundingClientRect().top + window.scrollY - gap;
+      window.scrollTo({ top: top < 0 ? 0 : top });
+    }, 0);
   };
   window.addEventListener('hashchange', openHashTarget);
   openHashTarget();
