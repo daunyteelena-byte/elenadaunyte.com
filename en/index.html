@@ -695,13 +695,8 @@ Tai, ką įkvėpęs kurstei savyje.</p>
     var id = (location.hash || '').slice(1);
     if (!id) return;
     var sec = document.getElementById(id);
-    if (!sec) return;
-    var d = sec.querySelector('details.fold');
+    var d = sec && sec.querySelector('details.fold');
     if (d) d.open = true;
-    // Opening the fold changes the layout under the browser's own jump, and
-    // Chrome then abandons the smooth scroll half-started — so once the new
-    // height has settled, finish the move ourselves.
-    requestAnimationFrame(function(){ sec.scrollIntoView(); });
   };
   window.addEventListener('hashchange', openHashTarget);
   openHashTarget();
