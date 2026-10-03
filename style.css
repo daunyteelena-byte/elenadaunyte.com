@@ -648,6 +648,16 @@ footer.site p{margin:0;}
 #zenklas .fold-body{margin-top:26px; text-align:left;}
 #zenklas .fold-body p{margin:0 0 16px; line-height:1.75;}
 #zenklas .fold-body p:last-child{margin-bottom:0;}
+.mark-title{
+  margin:0 0 22px; font-family:'Playfair Display',Georgia,serif;
+  font-size:21px; font-weight:600; color:var(--ink);
+}
+/* the short lines she set apart keep their own breath */
+.mark-beat{font-style:italic; color:var(--ink) !important; line-height:1.9 !important;}
+.mark-cry{
+  margin-top:26px !important; font-family:'Playfair Display',Georgia,serif;
+  font-size:18px; font-style:italic; color:var(--accent-muted) !important;
+}
 #zenklas .fold-body em{color:var(--ink); font-style:italic;}
 #zenklas .fold-close{margin-top:26px; font-size:15px;}
 
