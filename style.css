@@ -81,10 +81,12 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
 /* the menu is the one control every visitor needs, so it is filled rather
    than outlined — an outline on this pale header simply vanished */
 .menu-switch summary{
-  list-style:none; cursor:pointer; color:#ffffff;
+  list-style:none; cursor:pointer; color:var(--ink);
   font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.03em;
-  padding:10px 19px 10px 17px; border:1px solid var(--accent); border-radius:2px;
-  background:var(--accent);
+  padding:10px 19px 10px 17px; border:1px solid #8ccdc2; border-radius:2px;
+  /* a lighter mint than the emerald it was; white lettering would wash out on
+     a tint this pale, so the words take the dark green of the text */
+  background:#8ccdc2;
   transition:.2s ease; white-space:nowrap;
 }
 .menu-switch summary::-webkit-details-marker{display:none;}
@@ -94,7 +96,7 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
   border-top:1px solid currentColor; border-bottom:1px solid currentColor;
 }
 .menu-switch summary:hover,.menu-switch summary:focus-visible,
-.menu-switch[open] summary{background:var(--ink); border-color:var(--ink);}
+.menu-switch[open] summary{background:#74c2b5; border-color:#74c2b5;}
 .menu-panel{
   position:absolute; top:calc(100% + 12px); right:0; z-index:45;
   min-width:212px; padding:12px 0;
