@@ -703,27 +703,45 @@ Tai, ką įkvėpęs kurstei savyje.</p>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Stop clear of the sticky bar, or the first thing in a section hides behind it
+  var headerGap = function(){
+    var bar = document.querySelector('header.site');
+    return (bar ? bar.getBoundingClientRect().height : 0) + 20;
+  };
+  var goTo = function(sec, smooth){
+    var top = sec.getBoundingClientRect().top + window.scrollY - headerGap();
+    window.scrollTo({ top: top < 0 ? 0 : top, behavior: smooth ? 'smooth' : 'auto' });
+  };
+
   var openHashTarget = function(){
     var id = (location.hash || '').slice(1);
     if (!id) return;
     var sec = document.getElementById(id);
     if (!sec) return;
     var d = sec.querySelector('details.fold');
-    if (!d || d.open) return;
-    d.open = true;
-    // The jump lands before the fold opens, and at the foot of the page there
-    // is nothing below to scroll past, so it stops short. Opening makes the
-    // room — finish the move once it has, stopping clear of the sticky header
-    // so the first thing in the section is not hidden behind it.
-    setTimeout(function(){
-      var bar = document.querySelector('header.site');
-      var gap = (bar ? bar.getBoundingClientRect().height : 0) + 20;
-      var top = sec.getBoundingClientRect().top + window.scrollY - gap;
-      window.scrollTo({ top: top < 0 ? 0 : top });
-    }, 0);
+    if (d) d.open = true;
+    setTimeout(function(){ goTo(sec, false); }, 0);
   };
   window.addEventListener('hashchange', openHashTarget);
   openHashTarget();
+
+  // We follow links within the page ourselves. The browser starts its jump
+  // before the fold has opened, so at the foot of the page it aims at the end
+  // of a document that is about to grow — and then its scroll and ours pull in
+  // different directions. Opening first and moving once settles it.
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    var sec = document.getElementById(id);
+    if (!sec) return;
+    e.preventDefault();
+    var d = sec.querySelector('details.fold');
+    if (d) d.open = true;
+    if (history.replaceState) history.replaceState(null, '', '#' + id);
+    goTo(sec, true);
+  });
 
   document.addEventListener('click', function(e){
     document.querySelectorAll('details.lang-switch[open], details.menu-switch[open]').forEach(function(d){
