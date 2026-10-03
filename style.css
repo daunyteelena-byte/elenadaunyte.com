@@ -132,6 +132,17 @@ nav a:hover{color:var(--accent);}
   nav{padding:14px 20px;}
   .brand{font-size:17px;gap:10px;}
   .brand-mark{width:38px;height:38px;}
+  /* on a phone the menu sits on its own row and is read at arm's length, so
+     the outline is already plain to see; the fill is for the desktop header,
+     where it was getting lost */
+  .menu-switch summary{
+    background:none; color:var(--accent); border-color:var(--accent);
+    padding:9px 18px 9px 16px;
+  }
+  .menu-switch summary:hover,.menu-switch summary:focus-visible,
+  .menu-switch[open] summary{
+    background:var(--bg-2); color:var(--accent); border-color:var(--accent);
+  }
 }
 
 /* Hero */
