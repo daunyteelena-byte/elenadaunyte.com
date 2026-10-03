@@ -78,10 +78,13 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
 /* One row: the name on the left, language and menu in the right corner. */
 .nav-tools{display:flex; align-items:center; gap:22px;}
 .menu-switch{position:relative;}
+/* the menu is the one control every visitor needs, so it is filled rather
+   than outlined — an outline on this pale header simply vanished */
 .menu-switch summary{
-  list-style:none; cursor:pointer; color:var(--accent);
+  list-style:none; cursor:pointer; color:#ffffff;
   font-family:'EB Garamond',serif; font-size:16px; letter-spacing:.03em;
-  padding:9px 18px 9px 16px; border:1px solid var(--accent); border-radius:2px;
+  padding:10px 19px 10px 17px; border:1px solid var(--accent); border-radius:2px;
+  background:var(--accent);
   transition:.2s ease; white-space:nowrap;
 }
 .menu-switch summary::-webkit-details-marker{display:none;}
@@ -91,7 +94,7 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
   border-top:1px solid currentColor; border-bottom:1px solid currentColor;
 }
 .menu-switch summary:hover,.menu-switch summary:focus-visible,
-.menu-switch[open] summary{background:var(--bg-2);}
+.menu-switch[open] summary{background:var(--ink); border-color:var(--ink);}
 .menu-panel{
   position:absolute; top:calc(100% + 12px); right:0; z-index:45;
   min-width:212px; padding:12px 0;
