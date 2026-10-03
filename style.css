@@ -147,6 +147,16 @@ nav a:hover{color:var(--accent);}
   }
 }
 
+/* Narrow phones keep the same header as wide ones: one row, the name on the
+   left and the tools on the right. At 360px it was 17px short of fitting, so
+   the gaps give that back — nothing changes size, it only draws closer. */
+@media (max-width:384px){
+  nav{padding:14px 16px;}
+  .brand{gap:8px;}
+  .brand-mark{width:34px;height:34px;}
+  .nav-tools{gap:14px;}
+}
+
 /* Hero */
 .hero{
   position:relative;
