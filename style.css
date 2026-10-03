@@ -633,15 +633,13 @@ footer.site p{margin:0;}
 /* the mark's own story, kept behind a quiet line so the foot stays calm */
 #zenklas .fold{max-width:560px; margin:0 auto;}
 #zenklas{margin-bottom:26px;}
+/* The rule runs wider than the words and reaches past the first letter. The
+   arrow sits inside the button and pushes the right end out, so the same
+   amount of room on the left keeps the words centred over the line. */
 #zenklas .fold-toggle{
-  margin-top:0; padding:0; border:0; border-radius:0; background:none;
-  font-size:15px; color:var(--ink-soft);
-}
-/* the rule underlines the words only: carried by the whole button it would
-   run on under the arrow, and the words would then sit off its centre */
-#zenklas .fold-toggle .fold-c,
-#zenklas .fold-toggle .fold-o{
-  padding-bottom:6px; border-bottom:2px solid var(--accent);
+  margin-top:0; padding:0 0 6px 15px; border:0;
+  border-bottom:2px solid var(--accent);
+  border-radius:0; background:none; font-size:15px; color:var(--ink-soft);
 }
 #zenklas summary:hover .fold-toggle,
 #zenklas summary:focus-visible .fold-toggle{color:var(--accent); background:none;}
