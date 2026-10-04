@@ -457,6 +457,10 @@ section{padding:78px 0;border-top:1px solid var(--line);}
 .media-pub .fold-body{margin-top:26px;}
 .media-pub .gallery-credit{margin-top:14px;}
 .media-pub .fold-close{margin-top:28px;}
+/* the one photograph in Apdovanojimai: the sentence above it says she has had
+   the presidents' thanks, and this is that sentence happening */
+#awards .award-photo{margin-top:30px;}
+#awards .gallery-credit{margin-top:14px;}
 .media-source{
   display:block; margin-top:7px; color:var(--ink-soft);
   font-size:14px; letter-spacing:.04em; text-transform:uppercase;
