@@ -543,6 +543,11 @@ section{padding:78px 0;border-top:1px solid var(--line);}
    get this?" */
 .poetry-intro{margin:0 0 6px; max-width:560px; color:var(--ink-soft);}
 .poetry-intro em{color:var(--ink); font-style:italic;}
+/* the line is also the way there: it opens this publication inside
+   Žiniasklaidoje rather than repeating it here */
+.poetry-pub a{color:inherit; text-decoration:none;
+  border-bottom:1px solid var(--line); transition:.2s ease;}
+.poetry-pub a:hover,.poetry-pub a:focus-visible{color:var(--accent); border-color:var(--accent);}
 .poetry-pub{margin:0 0 26px; max-width:560px; font-size:14px;
   letter-spacing:.02em; color:var(--accent-2);}
 .poems{margin-bottom:44px;}
