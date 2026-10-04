@@ -114,7 +114,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=105">
+<link rel="stylesheet" href="../style.css?v=106">
 </head>
 <body>
 
@@ -509,7 +509,7 @@ Tai, ką įkvėpęs kurstei savyje.</p>
         <div class="fold-body">
           <ul class="media-list">
               <li class="media-pub">
-                <details class="fold">
+                <details class="fold" data-close="Schließen">
                   <summary>
                     <span class="media-title">„Ein Motorradunfall ließ das Cello verstummen“</span>
                     <span class="media-source">Lietuvos rytas · „Savaitgalis“ · 7.–13. August 2026</span>
@@ -537,7 +537,7 @@ Tai, ką įkvėpęs kurstei savyje.</p>
                 </details>
               </li>
               <li class="media-pub">
-                <details class="fold">
+                <details class="fold" data-close="Schließen">
                   <summary>
                     <span class="media-title">Gedichtveröffentlichung</span>
                     <span class="media-source">Krantai · 2026 (2) · Juni</span>
@@ -818,12 +818,15 @@ Tai, ką įkvėpęs kurstei savyje.</p>
   // Once a fold is open its only control is back at the top. Give every fold a
   // second one at the end, so closing does not mean scrolling up to find it.
   document.querySelectorAll('details.fold').forEach(function(d){
+    // most folds carry their closing word in a .fold-o label; the ones that
+    // have no toggle of their own name it on the element instead
     var label = d.querySelector('.fold-o');
-    if (!label || d.querySelector('.fold-close')) return;
+    var word = label ? label.textContent : d.getAttribute('data-close');
+    if (!word || d.querySelector('.fold-close')) return;
     var b = document.createElement('button');
     b.type = 'button';
     b.className = 'fold-close';
-    b.textContent = label.textContent;
+    b.textContent = word;
     b.addEventListener('click', function(){
       var summary = d.querySelector('summary');
       var top = summary.getBoundingClientRect().top + window.scrollY - 110;
