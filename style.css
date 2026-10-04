@@ -434,6 +434,25 @@ section{padding:78px 0;border-top:1px solid var(--line);}
   line-height:1.45; transition:.2s ease;
 }
 .media-list a:hover{color:var(--accent);}
+/* One item in this list is not an article about her but her own poems, so it
+   opens in place instead of leading away. Its title stays visible when open —
+   it is the control for closing it again. */
+.media-pub summary{list-style:none; cursor:pointer;}
+.media-pub summary::-webkit-details-marker{display:none;}
+.media-pub details.fold[open] summary{display:block;}
+.media-title{
+  display:block; color:var(--ink); font-size:19px; line-height:1.45;
+  transition:.2s ease;
+}
+.media-title::after{
+  content:'\2193'; margin-left:9px; display:inline-block;
+  color:var(--accent); transition:transform .2s ease;
+}
+.media-pub details[open] .media-title::after{transform:rotate(180deg);}
+.media-pub summary:hover .media-title,
+.media-pub summary:focus-visible .media-title{color:var(--accent);}
+.media-pub .fold-body{margin-top:26px;}
+.media-pub .gallery-credit{margin-top:14px;}
 .media-source{
   display:block; margin-top:7px; color:var(--ink-soft);
   font-size:14px; letter-spacing:.04em; text-transform:uppercase;
