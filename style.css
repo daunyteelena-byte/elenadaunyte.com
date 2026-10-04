@@ -439,7 +439,10 @@ section{padding:78px 0;border-top:1px solid var(--line);}
    it is the control for closing it again. */
 .media-pub summary{list-style:none; cursor:pointer;}
 .media-pub summary::-webkit-details-marker{display:none;}
-.media-pub details.fold[open] summary{display:block;}
+/* These are folds inside a fold. The rule that hides a summary once its
+   section is open reaches every summary within it, so these two lines
+   vanished the moment Žiniasklaidoje was opened — they must stay. */
+#media .media-pub details > summary{display:block;}
 .media-title{
   display:block; color:var(--ink); font-size:19px; line-height:1.45;
   transition:.2s ease;
