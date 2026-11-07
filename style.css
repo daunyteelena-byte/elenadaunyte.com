@@ -725,3 +725,54 @@ footer.site p{margin:0;}
 }
 
 ::selection{background:var(--accent);color:#ffffff;}
+
+/* ---------- Artėjantys renginiai ----------
+   Data kairėje, tekstas dešinėje — kaip feelharmonic.lt. Telefone data
+   persikelia virš teksto ir virsta viena eilute, kad nespaustų turinio. */
+#events .event{
+  display:grid; grid-template-columns:96px 1fr; gap:26px;
+  align-items:start; max-width:720px;
+  padding:28px 30px; border:1px solid var(--line); border-radius:3px;
+  background:var(--card);
+}
+#events .event-day{
+  text-align:center; padding:12px 0 14px;
+  border-radius:2px; background:var(--bg-2);
+}
+#events .event-day b{
+  display:block; font-family:'Playfair Display',Georgia,serif;
+  font-size:38px; font-weight:600; line-height:1; color:var(--ink);
+}
+#events .event-day span{
+  display:block; margin-top:6px; font-size:13px; letter-spacing:.06em;
+  color:var(--ink-soft);
+}
+#events .event-tx h3{
+  margin:0 0 8px; font-family:'Playfair Display',Georgia,serif;
+  font-size:22px; font-weight:600; line-height:1.3; color:var(--ink);
+}
+#events .event-motto{
+  margin:0 0 14px; font-style:italic; color:var(--accent-muted);
+}
+#events .event-meta{
+  margin:0 0 16px; font-size:14px; letter-spacing:.02em; color:var(--accent-2);
+}
+#events .event-tx p{margin:0 0 16px;}
+/* Tas pats mygtukas kaip „Žiūrėti visas nuotraukas“ — nedubliuojam stilių. */
+#events .event-btn{
+  display:inline-block; margin-top:4px; padding:12px 25px;
+  background:none; color:var(--accent);
+  border:2px solid var(--accent); border-radius:2px;
+  font-family:'EB Garamond',serif; font-size:17px; letter-spacing:.02em;
+  text-decoration:none; transition:.2s ease;
+}
+#events .event-btn:hover{background:var(--accent); color:#fff;}
+@media (max-width:760px){
+  #events .event{grid-template-columns:1fr; gap:18px; padding:24px 20px;}
+  #events .event-day{
+    display:inline-flex; align-items:baseline; gap:8px;
+    padding:8px 14px; justify-self:start;
+  }
+  #events .event-day b{font-size:26px;}
+  #events .event-day span{margin-top:0;}
+}
