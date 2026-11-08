@@ -801,5 +801,6 @@ footer.site p{margin:0;}
 }
 #events .event-tx h3{font-size:23px;}
   #events .event-extra{display:block; margin:16px 0 0;}
-  #events .event-end{margin-top:36px;}
+  /* Telefone viskas vienoje kolonoje, tad centras turi į ką atsiremti. */
+  #events .event-end{margin-top:36px; text-align:center;}
 }
