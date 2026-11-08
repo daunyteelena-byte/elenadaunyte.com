@@ -740,7 +740,7 @@ footer.site p{margin:0;}
 /* Kompiuteryje linija ilga ir blyški pranyktų, tad ji storesnė ir
    smaragdinė; telefone ji trumpa, ten užtenka šviesios. */
 @media (min-width:861px){
-  #events .section-head::after{height:1.5px; background:var(--accent);}
+  #events .section-head::after{height:1px; background:var(--accent);}
 }
 
 /* Spalva tenka tik kvietimo tekstui — sekcija lieka ant to paties
