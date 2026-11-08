@@ -732,9 +732,10 @@ footer.site p{margin:0;}
 /* Tik šioje sekcijoje vietoj rombo — plona linija: kvietimui ji ramesnė
    nei sekcijos ženklas. Pasukimas nuimamas, kitaip linija stotų įstrižai. */
 #events .section-head::after{
-  width:64px; height:1.5px;
+  width:100%; max-width:1000px; height:1px;
   transform:none;
-  margin-top:22px;
+  background:#cfe6e1;
+  margin-top:24px;
 }
 
 /* Spalva tenka tik kvietimo tekstui — sekcija lieka ant to paties
