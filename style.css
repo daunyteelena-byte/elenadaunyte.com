@@ -786,8 +786,10 @@ footer.site p{margin:0;}
 #events .event-extra:hover{color:var(--accent); border-bottom-color:var(--accent);}
 /* Viskas šioje sekcijoje lygiuojasi į kairę — centruota eilutė
    nebeturėtų į ką atsiremti ir atrodytų pakibusi. */
+/* Motto sėdi kairėje kolonoje po nuotrauka, centruotas jos plotyje —
+   taip jis turi kraštus, į kuriuos atsiremti. */
 #events .event-end{
-  margin:40px 0 0;
+  grid-column:1; margin:26px 0 0; text-align:center;
   font-family:'Playfair Display',Georgia,serif; font-size:21px; font-style:italic;
   color:var(--accent-muted);
 }
