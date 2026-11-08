@@ -102,13 +102,16 @@ nav a{color:var(--ink-soft);text-decoration:none;font-size:17px;letter-spacing:.
 .menu-panel{
   position:absolute; top:calc(100% + 12px); right:0; z-index:45;
   min-width:212px; padding:12px 0;
-  background:var(--card); border:1px solid var(--line); border-radius:2px;
+  /* Šiltas kreminis vietoj baltos: langas tampa to paties popieriaus dalimi.
+     Auksas čia pasirodo tik kaip briauna — jis lieka ženklo spalva. */
+  background:#fbf7ef; border:1px solid #ece3d2; border-radius:2px;
+  border-top:2px solid #ca9f53;
   box-shadow:0 22px 52px -24px rgba(22,51,48,.5);
 }
 .menu-panel ul{display:block; overflow:visible; gap:0;}
-.menu-panel li + li{border-top:1px solid var(--bg-2);}
+.menu-panel li + li{border-top:1px solid #f1e9da;}
 .menu-panel a{display:block; padding:11px 22px; font-size:16px;}
-.menu-panel a:hover{background:var(--bg-2); color:var(--accent);}
+.menu-panel a:hover{background:#f4ecdd; color:var(--accent);}
 nav a:hover{color:var(--accent);}
 /* the current language is the control; the other five wait behind it */
 .lang-switch{position:relative; font-size:13px; letter-spacing:.03em; text-transform:uppercase;}
@@ -123,14 +126,14 @@ nav a:hover{color:var(--accent);}
   position:absolute; top:calc(100% + 10px); right:0; z-index:40;
   display:flex; flex-direction:column; gap:2px;
   padding:10px 4px; min-width:66px;
-  background:var(--card); border:1px solid var(--line); border-radius:2px;
+  background:#fbf7ef; border:1px solid #ece3d2; border-radius:2px;
   box-shadow:0 16px 40px -22px rgba(22,51,48,.45);
 }
 .lang-menu a{
   color:var(--ink-soft); text-decoration:none; padding:5px 12px; text-align:center;
   transition:.15s ease;
 }
-.lang-menu a:hover{color:var(--accent); background:var(--bg-2);}
+.lang-menu a:hover{color:var(--accent); background:#f4ecdd;}
 
 @media (max-width:760px){
   nav{padding:14px 20px;}
