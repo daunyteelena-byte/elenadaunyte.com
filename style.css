@@ -786,16 +786,21 @@ footer.site p{margin:0;}
 #events .event-extra:hover{color:var(--accent); border-bottom-color:var(--accent);}
 /* Viskas šioje sekcijoje lygiuojasi į kairę — centruota eilutė
    nebeturėtų į ką atsiremti ir atrodytų pakibusi. */
-/* Motto sėdi kairėje kolonoje po nuotrauka, centruotas jos plotyje —
-   taip jis turi kraštus, į kuriuos atsiremti. */
+/* Nuotrauka ir motto — vienas blokas, tad jie centruojasi kartu ir
+   eilutė visada lieka iškart po kadru. */
 #events .event-end{
-  grid-column:1; margin:26px 0 0; text-align:center;
+  margin:22px 0 0; text-align:center;
   font-family:'Playfair Display',Georgia,serif; font-size:21px; font-style:italic;
   color:var(--accent-muted);
 }
 @media (max-width:860px){
   #events .event{grid-template-columns:1fr; gap:24px;}
   #events .event-tx{padding:26px 22px;}
+  /* Telefone blokas išnyksta, kad motto galėtų nukeliauti į patį apačią. */
+  #events .event-left{display:contents;}
+  #events .event-photo{order:1;}
+  #events .event-tx{order:2;}
+  #events .event-end{order:3;}
   #events .event-day b{font-size:42px;}
   #events .event-tx{
   background:var(--bg-2); border-radius:3px;
