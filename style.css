@@ -737,6 +737,11 @@ footer.site p{margin:0;}
   background:#cfe6e1;
   margin-top:24px;
 }
+/* Kompiuteryje linija ilga ir blyški pranyktų, tad ji storesnė ir
+   smaragdinė; telefone ji trumpa, ten užtenka šviesios. */
+@media (min-width:861px){
+  #events .section-head::after{height:2px; background:var(--accent);}
+}
 
 /* Spalva tenka tik kvietimo tekstui — sekcija lieka ant to paties
    kreminio fono kaip visos kitos. */
