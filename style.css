@@ -730,8 +730,8 @@ footer.site p{margin:0;}
    Jokios baltos dėžės: nuotrauka kairėje, kvietimas dešinėje, kaip ir visur
    kitur šiame puslapyje. Data — ne kvadratas, o pati tipografija. */
 #events .event{
-  display:grid; grid-template-columns:1fr 1fr; gap:46px;
-  align-items:center; max-width:1000px;
+  display:grid; grid-template-columns:minmax(0,360px) 1fr; gap:50px;
+  align-items:start; max-width:1000px;
 }
 #events .event-photo{margin:0;}
 #events .event-photo img{
@@ -778,13 +778,16 @@ footer.site p{margin:0;}
   transition:.2s ease;
 }
 #events .event-extra:hover{color:var(--accent); border-bottom-color:var(--accent);}
+/* Viskas šioje sekcijoje lygiuojasi į kairę — centruota eilutė
+   nebeturėtų į ką atsiremti ir atrodytų pakibusi. */
 #events .event-end{
-  margin:46px 0 0; text-align:center;
+  margin:40px 0 0;
   font-family:'Playfair Display',Georgia,serif; font-size:21px; font-style:italic;
   color:var(--accent-muted);
 }
 @media (max-width:860px){
   #events .event{grid-template-columns:1fr; gap:28px;}
+  #events .event-photo{max-width:320px;}
   #events .event-day b{font-size:42px;}
   #events .event-tx h3{font-size:23px;}
   #events .event-extra{display:block; margin:16px 0 0;}
