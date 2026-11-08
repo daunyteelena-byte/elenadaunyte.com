@@ -737,7 +737,7 @@ footer.site p{margin:0;}
 }
 #events .event{
   display:grid; grid-template-columns:1fr 1fr; gap:46px;
-  align-items:start; max-width:1000px;
+  align-items:center; max-width:1000px;
 }
 #events .event-photo{margin:0;}
 #events .event-photo img{
