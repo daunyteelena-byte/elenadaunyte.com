@@ -729,14 +729,12 @@ footer.site p{margin:0;}
 /* ---------- Artėjantys renginiai ----------
    Jokios baltos dėžės: nuotrauka kairėje, kvietimas dešinėje, kaip ir visur
    kitur šiame puslapyje. Data — ne kvadratas, o pati tipografija. */
-/* Tik šioje sekcijoje vietoj vieno rombo — trys, kaip maža vinjetė.
-   Elementas pasuktas 45°, tad šešėlių poslinkiai skaičiuoti pasuktoje
-   ašyje: 16 px į šoną ekrane = 11,31 px kiekviena vietine kryptimi. */
+/* Tik šioje sekcijoje vietoj rombo — plona linija: kvietimui ji ramesnė
+   nei sekcijos ženklas. Pasukimas nuimamas, kitaip linija stotų įstrižai. */
 #events .section-head::after{
-  width:7px; height:7px;
-  box-shadow:
-    11.31px -11.31px 0 var(--accent),
-    22.63px -22.63px 0 var(--accent);
+  width:64px; height:1.5px;
+  transform:none;
+  margin-top:22px;
 }
 
 /* Spalva tenka tik kvietimo tekstui — sekcija lieka ant to paties
